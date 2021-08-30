@@ -67,6 +67,9 @@ namespace GyroScope.Data.Treats
             }
         }
 
+        /// <summary>
+        /// The Name used to describe the AquariusIce.
+        /// </summary>
         public string Name
         {
             get
