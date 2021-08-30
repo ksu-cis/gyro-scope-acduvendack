@@ -66,5 +66,13 @@ namespace GyroScope.Data.Treats
                 }
             }
         }
+
+        public string Name
+        {
+            get
+            {
+                return $"{Size} {Flavor} Aquarius Ice";
+            }
+        }
     }
 }
