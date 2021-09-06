@@ -16,7 +16,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Pices Fish Dish.
     /// </summary>
-    class PicesFishDish
+    public class PicesFishDish
     {
         /// <summary>
         /// Property containing getter for the price of this dish.

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GyroScope.Data.Enums;
 
 /// <summary>
 /// The NameSpace that contains the Entree classes.
@@ -16,16 +17,16 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Leo Lamb Gyro.
     /// </summary>
-    class LeoLambGyro
+    public class LeoLambGyro
     {
         /// <summary>
         /// Field that stores the meat for this gyro.
         /// </summary>
-        private Enums.DonerMeat _meat = Enums.DonerMeat.Lamb;
+        private DonerMeat _meat = DonerMeat.Lamb;
         /// <summary>
         /// Meat property with getter and setter.
         /// </summary>
-        public Enums.DonerMeat Meat
+        public DonerMeat Meat
         {
             get
             {
@@ -95,20 +96,20 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Field that stores if Egg Plant is used in this gyro.
         /// </summary>
-        private bool _eggPlant = true;
+        private bool _eggplant = true;
         /// <summary>
         /// Property with getter and setter for if Egg Plant is used.
         /// </summary>
-        public bool EggPlant
+        public bool Eggplant
         {
             get
             {
-                return this._eggPlant;
+                return this._eggplant;
             }
 
             set
             {
-                this._eggPlant = value;
+                this._eggplant = value;
             }
         }
 
@@ -189,7 +190,7 @@ namespace GyroScope.Data.Entrees
                     _calories += 30;
                 }
 
-                if (EggPlant == true)
+                if (Eggplant == true)
                 {
                     _calories += 47;
                 }
@@ -258,15 +259,15 @@ namespace GyroScope.Data.Entrees
                     specialInstructions.Enqueue("Hold Mint Chutney");
                 }
 
-                if (Meat == Enums.DonerMeat.Chicken)
+                if (Meat == DonerMeat.Chicken)
                 {
                     specialInstructions.Enqueue("Use Chicken");
                 }
-                else if (Meat == Enums.DonerMeat.Pork)
+                else if (Meat == DonerMeat.Pork)
                 {
                     specialInstructions.Enqueue("Use Pork");
                 }
-                else if (Meat == Enums.DonerMeat.Beef)
+                else if (Meat == DonerMeat.Beef)
                 {
                     specialInstructions.Enqueue("Use Beef");
                 }

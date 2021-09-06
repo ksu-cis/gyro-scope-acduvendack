@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GyroScope.Data.Enums;
 
 /// <summary>
 /// The NameSpace that contains the Sides classes.
@@ -16,16 +17,16 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Taurus Tabuleh.
     /// </summary>
-    class TaurusTabuleh
+    public class TaurusTabuleh
     {
         /// <summary>
         /// Field that stores the size of this side.
         /// </summary>
-        private Enums.Size _size;
+        private Size _size;
         /// <summary>
         /// Property with getter and setter for size.
         /// </summary>
-        public Enums.Size Size
+        public Size Size
         {
             get
             {
@@ -45,11 +46,11 @@ namespace GyroScope.Data.Sides
         {
             get
             {
-                if (this._size == Enums.Size.Small)
+                if (this._size == Size.Small)
                 {
                     return 1.50m;
                 }
-                else if (this._size == Enums.Size.Medium)
+                else if (this._size == Size.Medium)
                 {
                     return 2.00m;
                 }
@@ -67,11 +68,11 @@ namespace GyroScope.Data.Sides
         {
             get
             {
-                if (this._size == Enums.Size.Small)
+                if (this._size == Size.Small)
                 {
                     return 124;
                 }
-                else if (this._size == Enums.Size.Medium)
+                else if (this._size == Size.Medium)
                 {
                     return 186;
                 }
