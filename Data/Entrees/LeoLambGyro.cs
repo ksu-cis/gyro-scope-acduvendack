@@ -17,61 +17,19 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Leo Lamb Gyro.
     /// </summary>
-    public class LeoLambGyro
+    public class LeoLambGyro : Gyro
     {
         /// <summary>
         /// Field that stores the meat for this gyro.
         /// </summary>
         private DonerMeat _meat = DonerMeat.Lamb;
-        /// <summary>
-        /// Meat property with getter and setter.
-        /// </summary>
-        public DonerMeat Meat
-        {
-            get
-            {
-                return this._meat;
-            }
-
-            set
-            {
-                this._meat = value;
-            }
-        }
 
         /// <summary>
         /// Field that stores if pita is used in this gyro.
         /// </summary>
-        private bool _pita = true;
-        /// <summary>
-        /// Property with getter and setter for if pita is used.
-        /// </summary>
-        public bool Pita
-        {
-            get
-            {
-                return this._pita;
-            }
+        private bool _pita = new bool();
 
-            set
-            {
-                this._pita = value;
-            }
-        }
-
-        private bool _tomato = true;
-        public bool Tomato
-        {
-            get
-            {
-                return this._tomato;
-            }
-
-            set
-            {
-                this._tomato = value;
-            }
-        }
+        private bool _tomato = new bool();
 
         /// <summary>
         /// Field that stores if onion is used in this gyro.
@@ -156,7 +114,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property containing getter for the price of this gyro.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -171,7 +129,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that gets the calories for this gyro.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -229,7 +187,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that gets a list of special instructions for this gyro.
         /// </summary>
-        public IEnumerable<string> SpecialInstructions
+        public override IEnumerable<string> SpecialInstructions
         {
             get
             {

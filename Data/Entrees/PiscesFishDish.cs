@@ -1,5 +1,5 @@
 ﻿/*
- * PicesFishDish.cs
+ * PiscesFishDish.cs
  * Modified by: Adam Duvendack
  */
 using System;
@@ -14,9 +14,9 @@ using System.Threading.Tasks;
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
-    /// The class for the Pices Fish Dish.
+    /// The class for the Pisces Fish Dish.
     /// </summary>
-    public class PicesFishDish
+    public class PiscesFishDish
     {
         /// <summary>
         /// Property containing getter for the price of this dish.

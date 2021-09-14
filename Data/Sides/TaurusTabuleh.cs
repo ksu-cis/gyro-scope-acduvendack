@@ -17,32 +17,17 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Taurus Tabuleh.
     /// </summary>
-    public class TaurusTabuleh
+    public class TaurusTabuleh : Side
     {
         /// <summary>
         /// Field that stores the size of this side.
         /// </summary>
-        private Size _size;
-        /// <summary>
-        /// Property with getter and setter for size.
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return this._size;
-            }
-
-            set
-            {
-                this._size = value;
-            }
-        }
+        private Size _size = new Size();
 
         /// <summary>
         /// Property containing getter for the price of this side.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -64,7 +49,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// Property that gets the calories for this side.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
