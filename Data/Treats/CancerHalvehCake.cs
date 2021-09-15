@@ -13,7 +13,10 @@ using System.Threading.Tasks;
 /// </summary>
 namespace GyroScope.Data.Treats
 {
-    class CancerHalvehCake : Treat
+    /// <summary>
+    /// A class representing Cancer Halveh Cake.
+    /// </summary>
+    public class CancerHalvehCake : Treat
     {
         /// <summary>
         /// The price of this Cancer Halveh Cake
