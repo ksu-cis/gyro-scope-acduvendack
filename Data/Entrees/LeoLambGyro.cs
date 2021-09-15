@@ -20,95 +20,20 @@ namespace GyroScope.Data.Entrees
     public class LeoLambGyro : Gyro
     {
         /// <summary>
-        /// Field that stores the meat for this gyro.
+        /// Constructor for a Leo Lamn Gyro.
         /// </summary>
-        private DonerMeat _meat = DonerMeat.Lamb;
-
-        /// <summary>
-        /// Field that stores if pita is used in this gyro.
-        /// </summary>
-        private bool _pita = new bool();
-
-        private bool _tomato = new bool();
-
-        /// <summary>
-        /// Field that stores if onion is used in this gyro.
-        /// </summary>
-        private bool _onion = true;
-        /// <summary>
-        /// Property with getter and setter for if onion is used.
-        /// </summary>
-        public bool Onion
+        public LeoLambGyro()
         {
-            get
-            {
-                return this._onion;
-            }
-
-            set
-            {
-                this._onion = value;
-            }
-        }
-
-        /// <summary>
-        /// Field that stores if Egg Plant is used in this gyro.
-        /// </summary>
-        private bool _eggplant = true;
-        /// <summary>
-        /// Property with getter and setter for if Egg Plant is used.
-        /// </summary>
-        public bool Eggplant
-        {
-            get
-            {
-                return this._eggplant;
-            }
-
-            set
-            {
-                this._eggplant = value;
-            }
-        }
-
-        /// <summary>
-        /// Field that stores if lettuce is used in this gyro.
-        /// </summary>
-        private bool _lettuce = true;
-        /// <summary>
-        /// Property with getter and setter for if lettuce is used.
-        /// </summary>
-        public bool Lettuce
-        {
-            get
-            {
-                return this._lettuce;
-            }
-
-            set
-            {
-                this._lettuce = value;
-            }
-        }
-
-        /// <summary>
-        /// Field that stores if Mint Chutney is used in this gyro.
-        /// </summary>
-        private bool _mintChutney = true;
-        /// <summary>
-        /// Property with getter and setter for if Mint Chutney is used.
-        /// </summary>
-        public bool MintChutney
-        {
-            get
-            {
-                return this._mintChutney;
-            }
-
-            set
-            {
-                this._mintChutney = value;
-            }
+            Meat = DonerMeat.Lamb;
+            Pita = true;
+            Peppers = false;
+            Tomato = true;
+            Onion = true;
+            Eggplant = true;
+            Lettuce = true;
+            MintChutney = true;
+            Tzatziki = false;
+            WingSauce = false;
         }
 
         /// <summary>
@@ -119,68 +44,6 @@ namespace GyroScope.Data.Entrees
             get
             {
                 return 5.75m;
-            }
-        }
-
-        /// <summary>
-        /// Field that stores the calories of this gyro.
-        /// </summary>
-        private uint _calories = 0;
-        /// <summary>
-        /// Property that gets the calories for this gyro.
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                if (Pita == true)
-                {
-                    _calories += 262;
-                }
-
-                if (Tomato == true)
-                {
-                    _calories += 30;
-                }
-
-                if (Onion == true)
-                {
-                    _calories += 30;
-                }
-
-                if (Eggplant == true)
-                {
-                    _calories += 47;
-                }
-
-                if (Lettuce == true)
-                {
-                    _calories += 54;
-                }
-
-                if (MintChutney == true)
-                {
-                    _calories += 10;
-                }
-
-                if (Meat == Enums.DonerMeat.Chicken)
-                {
-                    _calories += 113;
-                }
-                else if (Meat == Enums.DonerMeat.Lamb)
-                {
-                    _calories += 151;
-                }
-                else if (Meat == Enums.DonerMeat.Pork)
-                {
-                    _calories += 187;
-                }
-                else if (Meat == Enums.DonerMeat.Beef)
-                {
-                    _calories += 181;
-                }
-
-                return _calories;
             }
         }
 
@@ -215,6 +78,21 @@ namespace GyroScope.Data.Entrees
                 if (MintChutney == false)
                 {
                     specialInstructions.Enqueue("Hold Mint Chutney");
+                }
+
+                if (Peppers == true)
+                {
+                    specialInstructions.Enqueue("Add Peppers");
+                }
+
+                if (Tzatziki == true)
+                {
+                    specialInstructions.Enqueue("Add Tzatziki");
+                }
+
+                if (WingSauce == true)
+                {
+                    specialInstructions.Enqueue("Add WingSauce");
                 }
 
                 if (Meat == DonerMeat.Chicken)

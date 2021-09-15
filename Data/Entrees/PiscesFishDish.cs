@@ -16,12 +16,12 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Pisces Fish Dish.
     /// </summary>
-    public class PiscesFishDish
+    public class PiscesFishDish : Entree
     {
         /// <summary>
         /// Property containing getter for the price of this dish.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -32,7 +32,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that gets the calories for this gyro.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -43,7 +43,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that gets a list of special instructions for this gyro.
         /// </summary>
-        public IEnumerable<string> SpecialInstructions
+        public override IEnumerable<string> SpecialInstructions
         {
             get
             {

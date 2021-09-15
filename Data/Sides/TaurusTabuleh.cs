@@ -19,10 +19,6 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class TaurusTabuleh : Side
     {
-        /// <summary>
-        /// Field that stores the size of this side.
-        /// </summary>
-        private Size _size = new Size();
 
         /// <summary>
         /// Property containing getter for the price of this side.
@@ -31,11 +27,11 @@ namespace GyroScope.Data.Sides
         {
             get
             {
-                if (this._size == Size.Small)
+                if (Size == Size.Small)
                 {
                     return 1.50m;
                 }
-                else if (this._size == Size.Medium)
+                else if (Size == Size.Medium)
                 {
                     return 2.00m;
                 }
@@ -53,11 +49,11 @@ namespace GyroScope.Data.Sides
         {
             get
             {
-                if (this._size == Size.Small)
+                if (Size == Size.Small)
                 {
                     return 124;
                 }
-                else if (this._size == Size.Medium)
+                else if (Size == Size.Medium)
                 {
                     return 186;
                 }

@@ -19,10 +19,6 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class SagittariusGreekSalad : Side
     {
-        /// <summary>
-        /// Field that stores the size of this side.
-        /// </summary>
-        private Size _size = new Size();
 
         /// <summary>
         /// Property containing getter for the price of this side.
@@ -31,11 +27,11 @@ namespace GyroScope.Data.Sides
         {
             get
             {
-                if (this._size == Size.Small)
+                if (Size == Size.Small)
                 {
                     return 2.00m;
                 }
-                else if (this._size == Size.Medium)
+                else if (Size == Size.Medium)
                 {
                     return 2.50m;
                 }
@@ -53,11 +49,11 @@ namespace GyroScope.Data.Sides
         {
             get
             {
-                if (this._size == Size.Small)
+                if (Size == Size.Small)
                 {
                     return 180;
                 }
-                else if (this._size == Size.Medium)
+                else if (Size == Size.Medium)
                 {
                     return 270;
                 }

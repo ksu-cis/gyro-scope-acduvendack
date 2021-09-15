@@ -1,5 +1,5 @@
 ﻿/*
- * Treat.cs
+ * Drink.cs
  * Modified by: Adam Duvendack
  */
 using System;
@@ -9,22 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// The NameSpace that contains the Treats classes.
+/// The NameSpace that contains the Drinks classes.
 /// </summary>
-namespace GyroScope.Data.Treats
+namespace GyroScope.Data.Drinks
 {
     /// <summary>
-    /// A base class for all treats sold at GyroScope
+    /// The class for a drink.
     /// </summary>
-    public abstract class Treat
+    public abstract class Drink
     {
         /// <summary>
-        /// The price of the treat
+        /// Property that gets the price for this drink.
         /// </summary>
         public abstract decimal Price { get; }
 
         /// <summary>
-        /// The calories of the treat
+        /// Property that gets the calories for this drink.
         /// </summary>
         public abstract uint Calories { get; }
     }

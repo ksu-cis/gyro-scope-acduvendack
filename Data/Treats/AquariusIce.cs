@@ -1,16 +1,23 @@
-﻿using System;
+﻿/*
+ * AquariusIce.cs
+ * Modified by: Adam Duvendack
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 
+/// <summary>
+/// The NameSpace that contains the Treats classes.
+/// </summary>
 namespace GyroScope.Data.Treats
 {
     /// <summary>
     /// A class representing "Aquarius Ice" - an itialian iced soda
     /// </summary>
-    public class AquariusIce
+    public class AquariusIce : Treat
     {
         /// <summary>
         /// The size of this Aquarius Ice
@@ -26,7 +33,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// The calories of this Aquarius Ice
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -49,7 +56,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// The price of this Aquarius Ice
         /// </summary>
-        public decimal Price 
+        public override decimal Price 
         { 
             get
             {
