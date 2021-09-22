@@ -50,15 +50,15 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    return 304;
+                    return 304u;
                 }
                 else if (Size == Size.Medium)
                 {
-                    return 456;
+                    return 456u;
                 }
                 else
                 {
-                    return 608;
+                    return 608u;
                 }
             }
         }

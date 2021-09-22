@@ -27,7 +27,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Field that stores if this Libra Libation is sparkling.
         /// </summary>
-        public bool _sparkling = true;
+        private bool _sparkling = true;
 
         /// <summary>
         /// Property with getter and setter for this Libra Libation is sparkling.
@@ -54,19 +54,19 @@ namespace GyroScope.Data.Drinks
             {
                 if (Flavor == LibraLibationFlavor.Orangeade)
                 {
-                    return 180;
+                    return 180u;
                 }
                 else if (Flavor == LibraLibationFlavor.SourCherry)
                 {
-                    return 100;
+                    return 100u;
                 }
                 else if (Flavor == LibraLibationFlavor.Biral)
                 {
-                    return 120;
+                    return 120u;
                 }
                 else
                 {
-                    return 41;
+                    return 41u;
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace GyroScope.Data.Drinks
         {
             get
             {
-                return 100m;
+                return 1.00m;
             }
         }
 

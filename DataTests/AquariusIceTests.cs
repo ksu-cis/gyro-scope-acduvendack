@@ -1,8 +1,15 @@
+/*
+ * AquariusIceTests.cs
+ * Modified by: Nathan Bean
+ */
 using System;
 using Xunit;
 using GyroScope.Data.Enums;
 using GyroScope.Data.Treats;
 
+/// <summary>
+/// The NameSpace that contains the Tests classes.
+/// </summary>
 namespace GyroScope.DataTests
 {
     /// <summary>
@@ -67,6 +74,53 @@ namespace GyroScope.DataTests
 
         }
 
+        /// <summary>
+        /// Checks if size can be set.
+        /// </summary>
+        /// <param name="size">The expected size.</param>
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldBeAbleToSetSize(Size size)
+        {
+            var ice = new AquariusIce() { Size = size };
+            Assert.Equal(size, ice.Size);
+        }
 
+        /// <summary>
+        /// Checks if the name of each size and flavor are correct.
+        /// </summary>
+        /// <param name="size">The size.</param>
+        /// <param name="flavor">The flavor.</param>
+        /// <param name="name">The expected name.</param>
+        [Theory]
+        [InlineData(Size.Small, AquariusIceFlavor.BlueRaspberry, "Small BlueRaspberry Aquarius Ice")]
+        [InlineData(Size.Small, AquariusIceFlavor.Lemon, "Small Lemon Aquarius Ice")]
+        [InlineData(Size.Small, AquariusIceFlavor.Mango, "Small Mango Aquarius Ice")]
+        [InlineData(Size.Small, AquariusIceFlavor.Orange, "Small Orange Aquarius Ice")]
+        [InlineData(Size.Small, AquariusIceFlavor.Strawberry, "Small Strawberry Aquarius Ice")]
+        [InlineData(Size.Small, AquariusIceFlavor.Watermellon, "Small Watermellon Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.BlueRaspberry, "Medium BlueRaspberry Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.Lemon, "Medium Lemon Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.Mango, "Medium Mango Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.Orange, "Medium Orange Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.Strawberry, "Medium Strawberry Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.Watermellon, "Medium Watermellon Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.BlueRaspberry, "Large BlueRaspberry Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Lemon, "Large Lemon Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Mango, "Large Mango Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Orange, "Large Orange Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Strawberry, "Large Strawberry Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Watermellon, "Large Watermellon Aquarius Ice")]
+        public void ShouldHaveTheRightNameForSizeAndFlavor(Size size, AquariusIceFlavor flavor, string name)
+        {
+            var ice = new AquariusIce()
+            {
+                Size = size,
+                Flavor = flavor
+            };
+            Assert.Equal(name, ice.Name);
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace GyroScope.Data.Entrees
         {
             get
             {
-                return 726;
+                return 726u;
             }
         }
 

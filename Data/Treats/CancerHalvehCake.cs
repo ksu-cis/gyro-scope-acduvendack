@@ -36,7 +36,7 @@ namespace GyroScope.Data.Treats
         {
             get
             {
-                return 272;
+                return 272u;
             }
         }
     }

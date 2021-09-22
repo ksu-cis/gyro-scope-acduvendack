@@ -60,9 +60,19 @@ namespace GyroScope.Data.Entrees
                     specialInstructions.Enqueue("Hold Pita");
                 }
 
+                if (Tomato == true)
+                {
+                    specialInstructions.Enqueue("Add Tomato");
+                }
+
                 if (Peppers == false)
                 {
                     specialInstructions.Enqueue("Hold Peppers");
+                }
+
+                if (Eggplant == true)
+                {
+                    specialInstructions.Enqueue("Add Eggplant");
                 }
 
                 if (Onion == false)
@@ -75,29 +85,19 @@ namespace GyroScope.Data.Entrees
                     specialInstructions.Enqueue("Hold Lettuce");
                 }
 
+                if (Tzatziki == true)
+                {
+                    specialInstructions.Enqueue("Add Tzatziki");
+                }
+
                 if (WingSauce == false)
                 {
                     specialInstructions.Enqueue("Hold Wing Sauce");
                 }
 
-                if (Tomato == true)
-                {
-                    specialInstructions.Enqueue("Add Tomato");
-                }
-
-                if (Eggplant == true)
-                {
-                    specialInstructions.Enqueue("Add Eggplant");
-                }
-
                 if (MintChutney == true)
                 {
-                    specialInstructions.Enqueue("Add MintChutney");
-                }
-
-                if (Tzatziki == true)
-                {
-                    specialInstructions.Enqueue("Add Tzatziki");
+                    specialInstructions.Enqueue("Add Mint Chutney");
                 }
 
                 if (Meat == DonerMeat.Lamb)
