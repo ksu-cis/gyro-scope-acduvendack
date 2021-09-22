@@ -1,5 +1,5 @@
 ﻿/*
- * CancerHalvehCakeTests.cs
+ * CancerHelvahCakeTests.cs
  * Modified by: Adam Duvendack
  */
 using System;
@@ -17,9 +17,9 @@ using GyroScope.Data.Treats;
 namespace GyroScope.DataTests
 {
     /// <summary>
-    /// Unit tests for CancerHalvehCake
+    /// Unit tests for CancerHelvahCake
     /// </summary>
-    public class CancerHalvehCakeTests
+    public class CancerHelvahCakeTests
     {
         /// <summary>
         /// Checks the default price.
@@ -27,7 +27,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            Treat cancerCake = new CancerHalvehCake();
+            Treat cancerCake = new CancerHelvahCake();
             Assert.Equal(3.00m, cancerCake.Price);
         }
 
@@ -37,7 +37,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void CaloriesShouldBeCorrect()
         {
-            Treat cancerCake = new CancerHalvehCake();
+            Treat cancerCake = new CancerHelvahCake();
             Assert.Equal(272u, cancerCake.Calories);
         }
     }

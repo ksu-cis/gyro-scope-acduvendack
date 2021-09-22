@@ -1,5 +1,5 @@
 ﻿/*
- * CancerHalvehCake.cs
+ * CancerHelvahCake.cs
  * Modified by: Adam Duvendack
  */
 using System;
@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 namespace GyroScope.Data.Treats
 {
     /// <summary>
-    /// A class representing Cancer Halveh Cake.
+    /// A class representing Cancer Helvah Cake.
     /// </summary>
-    public class CancerHalvehCake : Treat
+    public class CancerHelvahCake : Treat
     {
         /// <summary>
-        /// The price of this Cancer Halveh Cake
+        /// The price of this Cancer Helvah Cake
         /// </summary>
         public override decimal Price
         {
@@ -30,7 +30,7 @@ namespace GyroScope.Data.Treats
         }
 
         /// <summary>
-        /// Property that gets the calories for this Cancer Halveh Cake.
+        /// Property that gets the calories for this Cancer Helvah Cake.
         /// </summary>
         public override uint Calories
         {
