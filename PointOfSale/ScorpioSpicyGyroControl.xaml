@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="PointOfSale.ScorpioSpicyGyroControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="50" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            Customize Scorpio Spicy Gyro
+        </TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20">
+            <TextBlock FontSize="25" HorizontalAlignment="Left">
+                Doner Meat
+            </TextBlock>
+            <RadioButton FontSize="25" HorizontalAlignment="Left">
+                Beef
+            </RadioButton>
+            <RadioButton FontSize="25" HorizontalAlignment="Left">
+                Chicken
+            </RadioButton>
+            <RadioButton FontSize="25" HorizontalAlignment="Left">
+                Lamb
+            </RadioButton>
+            <RadioButton FontSize="25" HorizontalAlignment="Left">
+                Pork
+            </RadioButton>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Pita
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Tomato
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Peppers
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Onion
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Lettuce
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Eggplant
+            </CheckBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Tzatziki
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Mint Chutney
+            </CheckBox>
+            <CheckBox FontSize="25" HorizontalAlignment="Left">
+                Wing Sauce
+            </CheckBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

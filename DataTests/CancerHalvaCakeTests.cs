@@ -19,7 +19,7 @@ namespace GyroScope.DataTests
     /// <summary>
     /// Unit tests for CancerHelvahCake
     /// </summary>
-    public class CancerHelvahCakeTests
+    public class CancerHalvaCakeTests
     {
         /// <summary>
         /// Checks the default price.
@@ -27,7 +27,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            Treat cancerCake = new CancerHelvahCake();
+            Treat cancerCake = new CancerHalvaCake();
             Assert.Equal(3.00m, cancerCake.Price);
         }
 
@@ -37,7 +37,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void CaloriesShouldBeCorrect()
         {
-            Treat cancerCake = new CancerHelvahCake();
+            Treat cancerCake = new CancerHalvaCake();
             Assert.Equal(272u, cancerCake.Calories);
         }
     }
