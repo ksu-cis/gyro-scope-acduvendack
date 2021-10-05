@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * LeoLambGyroControl.xaml.cs
+ * Modified by: Adam Duvendack
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +17,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/// <summary>
+/// The namespace for classes in the PointOfSale GUI
+/// </summary>
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for LeoLambGyro.xaml
+    /// Interaction logic for LeoLambGyroControl.xaml
     /// </summary>
-    public partial class LeoLambGyro : UserControl
+    public partial class LeoLambGyroControl : UserControl
     {
-        public LeoLambGyro()
+        /// <summary>
+        /// Initializes the control for Leo Lamb Gyro Customization
+        /// </summary>
+        public LeoLambGyroControl()
         {
             InitializeComponent();
         }

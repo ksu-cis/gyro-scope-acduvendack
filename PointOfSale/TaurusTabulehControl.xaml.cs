@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * TaurusTabulehControl.xaml.cs
+ * Modified by: Adam Duvendack
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +17,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/// <summary>
+/// The namespace for classes in the PointOfSale GUI
+/// </summary>
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for TaurusTabuleh.xaml
+    /// Interaction logic for TaurusTabulehControl.xaml
     /// </summary>
-    public partial class TaurusTabuleh : UserControl
+    public partial class TaurusTabulehControl : UserControl
     {
-        public TaurusTabuleh()
+        /// <summary>
+        /// Initializes the control for Taurus Tabuleh Customization
+        /// </summary>
+        public TaurusTabulehControl()
         {
             InitializeComponent();
         }

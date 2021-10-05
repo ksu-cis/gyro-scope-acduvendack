@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * App.xaml.cs
+ * Modified by: Adam Duvendack
+ */
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -6,6 +10,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+/// <summary>
+/// The namespace for classes in the PointOfSale GUI
+/// </summary>
 namespace PointOfSale
 {
     /// <summary>
