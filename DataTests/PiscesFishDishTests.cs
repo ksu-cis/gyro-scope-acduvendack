@@ -50,5 +50,15 @@ namespace GyroScope.DataTests
             Entree fishDish = new PiscesFishDish();
             Assert.Empty(fishDish.SpecialInstructions);
         }
+
+        /// <summary>
+        /// Checks that the override ToString method returns the expected string
+        /// </summary>
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
+        {
+            Entree fishDish = new PiscesFishDish();
+            Assert.Equal("Pisces Fish Dish", fishDish.ToString());
+        }
     }
 }

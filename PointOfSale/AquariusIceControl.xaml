@@ -4,9 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:System="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="{x:Type System:Size}" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="System:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="flavors" ObjectType="{x:Type System:AquariusIceFlavor}" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="System:AquariusIceFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <RadioButton Content="{TemplateBinding ContentPresenter.Content}"
+            IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition/>
@@ -23,38 +48,13 @@
             <TextBlock FontSize="25" HorizontalAlignment="Left">
                 Size
             </TextBlock>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Small
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Medium
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Large
-            </RadioButton>
+            <ListBox FontSize="25" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
             <TextBlock FontSize="25" HorizontalAlignment="Left">
                 Flavor
             </TextBlock>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Lemon
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Orange
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Mango
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Watermellon
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Blue Raspberry
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Strawberry
-            </RadioButton>
+            <ListBox FontSize="25" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}"/>
         </StackPanel>
     </Grid>
 </UserControl>

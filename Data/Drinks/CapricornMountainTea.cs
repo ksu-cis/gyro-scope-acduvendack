@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Drinks classes.
@@ -16,7 +17,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// The class for the Capricorn Mountain Tea.
     /// </summary>
-    public class CapricornMountainTea : Drink
+    public class CapricornMountainTea : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Property that gets the price for this Capricorn Mountain Tea.
@@ -64,8 +65,21 @@ namespace GyroScope.Data.Drinks
 
             set
             {
-                this._honey = value;
+                if (_honey != value)
+                {
+                    this._honey = value;
+                    OnPropertyChanged(nameof(this.Honey));
+                }
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Drink
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return "Capricorn Mountain Tea";
         }
     }
 }

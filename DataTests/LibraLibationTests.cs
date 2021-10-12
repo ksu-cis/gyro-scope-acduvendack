@@ -117,5 +117,84 @@ namespace GyroScope.DataTests
             libraLibation.Sparkling = sparkling;
             Assert.Equal(name, libraLibation.Name);
         }
+
+        /// <summary>
+        /// Checks that LibraLibation implements INotifyPropertyChanged
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var drink = new LibraLibation();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(drink);
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Flavor changed
+        /// </summary>
+        /// <param name="flavor">The flavor</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(LibraLibationFlavor.Biral, "Flavor")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Flavor")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Flavor")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Flavor")]
+        [InlineData(LibraLibationFlavor.Biral, "Calories")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Calories")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Calories")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Calories")]
+        [InlineData(LibraLibationFlavor.Biral, "Name")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Name")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Name")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Name")]
+        public void ShouldNotifyOfPropertyChangedWhenFlavorChanges(LibraLibationFlavor flavor, string propertyName)
+        {
+            var drink = new LibraLibation();
+
+            if (flavor == LibraLibationFlavor.Orangeade) { drink.Flavor = LibraLibationFlavor.Biral; }
+
+            Assert.PropertyChanged(drink, propertyName, () =>
+            {
+                drink.Flavor = flavor;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Sparkling changed
+        /// </summary>
+        /// <param name="sparkling">Sparkling or still</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Sparkling")]
+        [InlineData(false, "Sparkling")]
+        [InlineData(true, "Name")]
+        [InlineData(false, "Name")]
+        public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
+        {
+            var drink = new LibraLibation();
+
+            if (sparkling == true) { drink.Sparkling = false; }
+
+            Assert.PropertyChanged(drink, propertyName, () =>
+            {
+                drink.Sparkling = sparkling;
+            });
+        }
+
+        /// <summary>
+        /// Checks that the override ToString method returns the expected string
+        /// </summary>
+        /// <param name="flavor">The flavor</param>
+        /// <param name="name">The expected name</param>
+        [Theory]
+        [InlineData(LibraLibationFlavor.Biral, "Biral Libra Libation")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Orangeade Libra Libation")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Pink Lemonada Libra Libation")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Sour Cherry Libra Libation")]
+        public void ToStringShouldReturnExpectedValue(LibraLibationFlavor flavor, string name)
+        {
+            var drink = new LibraLibation();
+            drink.Flavor = flavor;
+            Assert.Equal(name, drink.ToString());
+        }
     }
 }

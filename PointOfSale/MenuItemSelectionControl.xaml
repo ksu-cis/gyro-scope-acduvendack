@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1152">
-    <Grid>
+    <Grid Button.Click="HandleClick">
         <Grid.Resources>
 
             <Style TargetType="Button">
@@ -35,13 +35,13 @@
         <TextBlock FontSize="30" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">
                 Entrees
         </TextBlock>
-        <Button Grid.Column="0" Grid.Row="1">
+        <Button x:Name="VirgoClassicGyroButton" Grid.Column="0" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Virgo Classic Gyro" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\Pork-Gyros-with-Homemade-Tzatziki-tall-FS.jpg" Height="82" Width="45"/>
             </StackPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2">
+        <Button x:Name="LeoLambGyroButton" Grid.Column="0" Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Leo Lamb Gyro" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\leoLambGyro.jpg" RenderTransformOrigin="0.5,0.5" Height="58" Width="76">
@@ -56,13 +56,13 @@
                 </Image>
             </StackPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="3">
+        <Button x:Name="ScorpioSpicyGyroButton" Grid.Column="0" Grid.Row="3">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Scorpio Spicy Gyro" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\Arby%u2019s-Debuts-New-Spicy-Greek-Gyro-678x381.jpg" Height="56" Width="75"/>
             </StackPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="4">
+        <Button x:Name="PiscesFishDishButton" Grid.Column="0" Grid.Row="4">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Pisces Fish Dish" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\chargrilled-fish-with-green-chilli-coriander-and-coconut-relish-70446-1.jpeg" Height="82" Width="45"/>
@@ -71,25 +71,19 @@
         <TextBlock FontSize="30" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
                 Sides
         </TextBlock>
-        <Button Grid.Column="1" Grid.Row="1">
+        <Button x:Name="TaurusTabulehButton" Grid.Column="1" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Taurus Tabuleh" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\Flickr_-_cyclonebill_-_Tabbouleh.jpg" Height="56" Width="97"/>
             </StackPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="2">
-            <StackPanel Height="121">
-                <TextBlock Padding="10" FontSize="20" Text="Gemini Stuffed Grape Leaves" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
-                <Image Source="C:\Users\acduv\Pictures\diet-nutrition_recipes_mediterranean-stuffed-grape-leaves_2928x2114_000005633932-600x450.jpg" Height="60" Width="72"/>
-            </StackPanel>
+        <Button x:Name="GeminiGrapeLeavesButton" Grid.Column="1" Grid.Row="2">
+            <TextBlock Padding="10" Text="Gemini Stuffed Grape Leaves" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="3">
-            <StackPanel>
-                <TextBlock Padding="5" FontSize="20" Text="Sagittarius Greek Salad" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
-                <Image Source="C:\Users\acduv\Pictures\__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2011__08__dads-greek-salad-horiz-a-1600-bc71b85bc907414a9bb3179a923b58fc.jpg" Height="87" Width="59"/>
-            </StackPanel>
+        <Button x:Name="SagittariusSaladButton" Grid.Column="1" Grid.Row="3">
+            <TextBlock Padding="5" Text="Sagittarius Greek Salad" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="4">
+        <Button x:Name="AriesFriesButton" Grid.Column="1" Grid.Row="4">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Aries Fries" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\Copycat-McDonalds-French-Fries-.jpg" Height="82" Width="45"/>
@@ -98,33 +92,29 @@
         <TextBlock FontSize="30" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">
                 Drinks
         </TextBlock>
-        <Button Grid.Column="2" Grid.Row="1">
+        <Button x:Name="LibraLibationButton" Grid.Column="2" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Libra Libation" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\7dbd1cbb-d597-4b8e-83b0-230d7532424c.jpg" Height="82" Width="45"/>
             </StackPanel>
         </Button>
-        <Button Grid.Column="2" Grid.Row="2">
-            <StackPanel>
-                <TextBlock Padding="0" FontSize="20" Text="Capricorn Mountain Tea" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
-                <Image Source="C:\Users\acduv\Pictures\greek-mountain-tea-in-cup-1024x684.jpg" Height="84" Width="66" RenderTransformOrigin="1.9,0.248"/>
-            </StackPanel>
+        <Button x:Name="CapricornTeaButton" Grid.Column="2" Grid.Row="2">
+            <TextBlock Padding="0" Text="Capricorn Mountain Tea" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         </Button>
         <TextBlock FontSize="30" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 Treats
         </TextBlock>
-        <Button Grid.Column="2" Grid.Row="4">
+        <Button x:Name="AquariusIceButton" Grid.Column="2" Grid.Row="4">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Aquarius Ice" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\ice treat.jpg" Height="84" Width="66" RenderTransformOrigin="1.9,0.248"/>
             </StackPanel>
         </Button>
-        <Button Grid.Column="2" Grid.Row="5">
+        <Button x:Name="CancerCakeButton" Grid.Column="2" Grid.Row="5">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Padding="10" Text="Cancer Halva Cake" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                 <Image Source="C:\Users\acduv\Pictures\Greek-Halva-recipe-Semolina-Pudding-with-Raisins-scaled.jpeg" Height="79" Width="55" RenderTransformOrigin="1.9,0.248"/>
             </StackPanel>
-
         </Button>
     </Grid>
 </UserControl>

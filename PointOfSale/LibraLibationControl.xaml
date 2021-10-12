@@ -4,9 +4,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:System="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="flavors" ObjectType="{x:Type System:LibraLibationFlavor}" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="System:LibraLibationFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <RadioButton Content="{TemplateBinding ContentPresenter.Content}"
+            IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition/>
@@ -21,31 +41,17 @@
         </TextBlock>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="20">
             <TextBlock FontSize="25" HorizontalAlignment="Left">
-                Size
+                Sparkling (Carbonated)
             </TextBlock>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Sparkling}" FontSize="25" HorizontalAlignment="Left">
                 Sparkling
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Still
-            </RadioButton>
+            </CheckBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
             <TextBlock FontSize="25" HorizontalAlignment="Left">
                 Flavor
             </TextBlock>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Orangeade
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Sour Cherry
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Biral
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Pink Lemonada
-            </RadioButton>
+            <ListBox FontSize="25" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}"/>
         </StackPanel>
     </Grid>
 </UserControl>

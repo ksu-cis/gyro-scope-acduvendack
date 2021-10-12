@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Sides classes.
@@ -17,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Aries Fries.
     /// </summary>
-    public class AriesFries : Side
+    public class AriesFries : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Property containing getter for the price of this side.
@@ -61,6 +62,15 @@ namespace GyroScope.Data.Sides
                     return 608u;
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return $"{Size} Aries Fries";
         }
     }
 }

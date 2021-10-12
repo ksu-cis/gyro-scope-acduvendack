@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GyroScope.Data.Entrees;
 
 /// <summary>
 /// The namespace for classes in the PointOfSale GUI
@@ -33,6 +34,20 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Event listener for the Select Items button
+        /// </summary>
+        /// <param name="sender">The source of the event</param>
+        /// <param name="e">The event</param>
+        private void HandleClick(Object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource is Button button13 && button13.Name == "ReturnToMainButton")
+            {
+                var menuSelectControl = new MenuItemSelectionControl();
+                menuItemSelect.Content = menuSelectControl;
+            }
         }
     }
 }

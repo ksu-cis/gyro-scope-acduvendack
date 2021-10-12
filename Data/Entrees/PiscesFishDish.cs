@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Entree classes.
@@ -16,7 +17,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Pisces Fish Dish.
     /// </summary>
-    public class PiscesFishDish : Entree
+    public class PiscesFishDish : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// Property containing getter for the price of this dish.
@@ -50,6 +51,15 @@ namespace GyroScope.Data.Entrees
                 Queue<string> specialInstructions = new Queue<string>();
                 return specialInstructions;
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return "Pisces Fish Dish";
         }
     }
 }

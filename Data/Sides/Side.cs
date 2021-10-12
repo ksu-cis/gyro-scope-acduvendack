@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Sides classes.
@@ -17,8 +18,13 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for sides.
     /// </summary>
-    public abstract class Side
+    public abstract class Side : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Notifies when a property of this class changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Field that stores the size of this side.
         /// </summary>
@@ -36,7 +42,13 @@ namespace GyroScope.Data.Sides
 
             set
             {
-                this._size = value;
+                if (_size != value)
+                {
+                    this._size = value;
+                    OnPropertyChanged(nameof(this.Size));
+                    OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Price));
+                }
             }
         }
 
@@ -50,5 +62,14 @@ namespace GyroScope.Data.Sides
         /// Property that gets the calories for this side.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Used to trigger a PropertyChanged event
+        /// </summary>
+        /// <param name="propertyName">The name of the property that is changing</param>
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

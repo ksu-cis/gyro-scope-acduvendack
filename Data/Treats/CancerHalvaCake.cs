@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Treats classes.
@@ -16,7 +17,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing Cancer Helvah Cake.
     /// </summary>
-    public class CancerHalvaCake : Treat
+    public class CancerHalvaCake : Treat, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of this Cancer Helvah Cake
@@ -38,6 +39,15 @@ namespace GyroScope.Data.Treats
             {
                 return 272u;
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return "Cancer Halva Cake";
         }
     }
 }

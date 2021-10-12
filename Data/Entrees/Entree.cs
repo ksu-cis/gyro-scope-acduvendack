@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Entree classes.
@@ -16,8 +17,13 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Abstract class that creates an Entree.
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Notifies when a property of this class changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Abstract property containing getter for the price of this entree.
         /// </summary>
@@ -32,5 +38,14 @@ namespace GyroScope.Data.Entrees
         /// Abstract property that gets a list of special instructions for this entree.
         /// </summary>
         public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Used to trigger a PropertyChanged event
+        /// </summary>
+        /// <param name="propertyName">The name of the property that is changing</param>
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

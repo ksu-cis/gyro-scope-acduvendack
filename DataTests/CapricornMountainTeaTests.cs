@@ -50,5 +50,45 @@ namespace GyroScope.DataTests
             mountainTea.Honey = honey;
             Assert.Equal(calories, mountainTea.Calories);
         }
+
+        /// <summary>
+        /// Checks that CapricornMountainTea implements INotifyPropertyChanged
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var drink = new CapricornMountainTea();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(drink);
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Sparkling changed
+        /// </summary>
+        /// <param name="honey">With or without honey</param>
+        /// <param name="propertyName">The property.</param>
+        [Theory]
+        [InlineData(true, "Honey")]
+        [InlineData(false, "Honey")]
+        public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool honey, string propertyName)
+        {
+            var drink = new CapricornMountainTea();
+
+            if (honey == false) { drink.Honey = true; }
+
+            Assert.PropertyChanged(drink, propertyName, () =>
+            {
+                drink.Honey = honey;
+            });
+        }
+
+        /// <summary>
+        /// Checks that the override ToString method returns the expected string
+        /// </summary>
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
+        {
+            Drink tea = new CapricornMountainTea();
+            Assert.Equal("Capricorn Mountain Tea", tea.ToString());
+        }
     }
 }

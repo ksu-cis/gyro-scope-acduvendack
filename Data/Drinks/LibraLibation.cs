@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Drinks classes.
@@ -17,12 +18,34 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// The class for the Libra Libation.
     /// </summary>
-    public class LibraLibation : Drink
+    public class LibraLibation : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Private backing field for Flavor property
+        /// </summary>
+        private LibraLibationFlavor _flavor;
+
         /// <summary>
         /// Property with getter and setter for the flavor of this Libra Liberation.
         /// </summary>
-        public LibraLibationFlavor Flavor { get; set; }
+        public LibraLibationFlavor Flavor
+        {
+            get
+            {
+                return _flavor;
+            }
+
+            set
+            {
+                if (_flavor != value)
+                {
+                    this._flavor = value;
+                    OnPropertyChanged(nameof(this.Flavor));
+                    OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
+                }
+            }
+        }
 
         /// <summary>
         /// Field that stores if this Libra Libation is sparkling.
@@ -41,7 +64,13 @@ namespace GyroScope.Data.Drinks
 
             set
             {
-                this._sparkling = value;
+                if (_sparkling != value)
+                {
+                    this._sparkling = value;
+                    OnPropertyChanged(nameof(this.Sparkling));
+                    OnPropertyChanged(nameof(this.Name));
+                }
+                
             }
         }
 
@@ -127,6 +156,26 @@ namespace GyroScope.Data.Drinks
                         return $"Still Pink Lemonada Libra Libation";
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Drink
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            if (this.Flavor == LibraLibationFlavor.SourCherry)
+            {
+                return "Sour Cherry Libra Libation";
+            }
+            else if (this.Flavor == LibraLibationFlavor.PinkLemonada)
+            {
+                return "Pink Lemonada Libra Libation";
+            }
+            else
+            {
+                return $"{Flavor} Libra Libation";
             }
         }
     }

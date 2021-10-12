@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Treats classes.
@@ -17,17 +18,47 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing "Aquarius Ice" - an itialian iced soda
     /// </summary>
-    public class AquariusIce : Treat
+    public class AquariusIce : Treat, INotifyPropertyChanged
     {
+        public Size _size = Size.Small;
+
         /// <summary>
         /// The size of this Aquarius Ice
         /// </summary>
-        public Size Size { get; set; }
+        public Size Size
+        {
+            get => _size;
+            set
+            {
+                if (_size != value)
+                {
+                    this._size = value;
+                    OnPropertyChanged(nameof(this.Size));
+                    OnPropertyChanged(nameof(this.Price));
+                    OnPropertyChanged(nameof(this.Name));
+                }
+            }
+        }
+
+        public AquariusIceFlavor _flavor = AquariusIceFlavor.Lemon;
 
         /// <summary>
         /// The flavor of this Aquarius Ice
         /// </summary>
-        public AquariusIceFlavor Flavor { get; set; }
+        public AquariusIceFlavor Flavor
+        {
+            get => _flavor;
+            set
+            {
+                if (_flavor != value)
+                {
+                    _flavor = value;
+                    OnPropertyChanged(nameof(this.Flavor));
+                    OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
+                }
+            }
+        }
 
         /// <summary>
         /// The calories of this Aquarius Ice
@@ -81,6 +112,22 @@ namespace GyroScope.Data.Treats
             get
             {
                 return $"{Size} {Flavor} Aquarius Ice";
+            }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            if (this.Flavor != AquariusIceFlavor.BlueRaspberry)
+            {
+                return $"{Size} {Flavor} Aquarius Ice";
+            }
+            else
+            {
+                return $"{Size} Blue Raspberry Aquarius Ice";
             }
         }
     }

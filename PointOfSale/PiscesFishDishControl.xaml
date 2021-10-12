@@ -13,11 +13,12 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock FontSize="50" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             Customize Pisces Fish Dish
+        </TextBlock>
+        <TextBlock FontSize="30" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0">
+            Sorry, Pisces Fish Dish cannot be customized!
         </TextBlock>
     </Grid>
 </UserControl>

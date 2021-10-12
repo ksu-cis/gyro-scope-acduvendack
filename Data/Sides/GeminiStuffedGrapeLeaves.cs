@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Sides classes.
@@ -17,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Gemini Stuffed Grape Leaves.
     /// </summary>
-    public class GeminiStuffedGrapeLeaves : Side
+    public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged
     {
 
         /// <summary>
@@ -62,6 +63,15 @@ namespace GyroScope.Data.Sides
                     return 720u;
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return $"{Size} Gemini Stuffed Grape Leaves";
         }
     }
 }

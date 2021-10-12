@@ -13,11 +13,12 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock FontSize="40" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             Customize Cancer Halva Cake
+        </TextBlock>
+        <TextBlock FontSize="30" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0">
+            Sorry, Cancer Halva Cake cannot be customized!
         </TextBlock>
     </Grid>
 </UserControl>

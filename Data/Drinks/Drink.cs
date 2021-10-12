@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Drinks classes.
@@ -16,8 +17,13 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// The class for a drink.
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Notifies when a property of this class changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Property that gets the price for this drink.
         /// </summary>
@@ -27,5 +33,14 @@ namespace GyroScope.Data.Drinks
         /// Property that gets the calories for this drink.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Used to trigger a PropertyChanged event
+        /// </summary>
+        /// <param name="propertyName">The name of the property that is changing</param>
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

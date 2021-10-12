@@ -4,9 +4,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:System="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="meats" ObjectType="{x:Type System:DonerMeat}" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="System:DonerMeat"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <RadioButton Content="{TemplateBinding ContentPresenter.Content}"
+            IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition/>
@@ -23,47 +43,36 @@
             <TextBlock FontSize="25" HorizontalAlignment="Left">
                 Doner Meat
             </TextBlock>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Beef
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Chicken
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Lamb
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Pork
-            </RadioButton>
+            <ListBox FontSize="25" ItemsSource="{Binding Source={StaticResource meats}}" SelectedItem="{Binding Path=Meat}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Pita}" FontSize="25" HorizontalAlignment="Left">
                 Pita
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Tomato}" FontSize="25" HorizontalAlignment="Left">
                 Tomato
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Peppers}" FontSize="25" HorizontalAlignment="Left">
                 Peppers
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Onion}" FontSize="25" HorizontalAlignment="Left">
                 Onion
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Lettuce}" FontSize="25" HorizontalAlignment="Left">
                 Lettuce
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Eggplant}" FontSize="25" HorizontalAlignment="Left">
                 Eggplant
             </CheckBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=Tzatziki}" FontSize="25" HorizontalAlignment="Left">
                 Tzatziki
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=MintChutney}" FontSize="25" HorizontalAlignment="Left">
                 Mint Chutney
             </CheckBox>
-            <CheckBox FontSize="25" HorizontalAlignment="Left">
+            <CheckBox IsChecked="{Binding Path=WingSauce}" FontSize="25" HorizontalAlignment="Left">
                 Wing Sauce
             </CheckBox>
         </StackPanel>

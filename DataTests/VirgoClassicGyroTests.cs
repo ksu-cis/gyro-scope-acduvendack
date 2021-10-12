@@ -138,5 +138,298 @@ namespace GyroScope.DataTests
                 Assert.Equal(expected.Length, gyro.SpecialInstructions.Count());
             }
         }
+
+        /// <summary>
+        /// Checks that VirgoClassicGyro implements INotifyPropertyChanged
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var gyro = new VirgoClassicGyro();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(gyro);
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Meat changed
+        /// </summary>
+        /// <param name="meat">The meat</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(DonerMeat.Beef, "Meat")]
+        [InlineData(DonerMeat.Chicken, "Meat")]
+        [InlineData(DonerMeat.Lamb, "Meat")]
+        [InlineData(DonerMeat.Pork, "Meat")]
+        [InlineData(DonerMeat.Beef, "Calories")]
+        [InlineData(DonerMeat.Chicken, "Calories")]
+        [InlineData(DonerMeat.Lamb, "Calories")]
+        [InlineData(DonerMeat.Pork, "Calories")]
+        [InlineData(DonerMeat.Beef, "SpecialInstructions")]
+        [InlineData(DonerMeat.Chicken, "SpecialInstructions")]
+        [InlineData(DonerMeat.Lamb, "SpecialInstructions")]
+        [InlineData(DonerMeat.Pork, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenMeatChanges(DonerMeat meat, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (meat == DonerMeat.Pork) { gyro.Meat = DonerMeat.Beef; }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Meat = meat;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Pita changed
+        /// </summary>
+        /// <param name="pita">With or without Pita</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Pita")]
+        [InlineData(false, "Pita")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenPitaChanges(bool pita, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (pita == true)
+            {
+                gyro.Pita = false;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Pita = pita;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Tomato changed
+        /// </summary>
+        /// <param name="tomato">With or without Tomato</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Tomato")]
+        [InlineData(false, "Tomato")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenTomatoChanges(bool tomato, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (tomato == true)
+            {
+                gyro.Tomato = false;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Tomato = tomato;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Onion changed
+        /// </summary>
+        /// <param name="onion">With or without Onion</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Onion")]
+        [InlineData(false, "Onion")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenOnionChanges(bool onion, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (onion == true)
+            {
+                gyro.Onion = false;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Onion = onion;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Eggplant changed
+        /// </summary>
+        /// <param name="eggplant">With or without Eggplant</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Eggplant")]
+        [InlineData(false, "Eggplant")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenEggplantChanges(bool eggplant, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (eggplant == false)
+            {
+                gyro.Eggplant = true;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Eggplant = eggplant;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Lettuce changed
+        /// </summary>
+        /// <param name="lettuce">With or without Lettuce</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Lettuce")]
+        [InlineData(false, "Lettuce")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenLettuceChanges(bool lettuce, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (lettuce == true)
+            {
+                gyro.Lettuce = false;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Lettuce = lettuce;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when MintChutney changed
+        /// </summary>
+        /// <param name="mintChutney">With or without MintChutney</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "MintChutney")]
+        [InlineData(false, "MintChutney")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenMintChutneyChanges(bool mintChutney, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (mintChutney == false)
+            {
+                gyro.MintChutney = true;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.MintChutney = mintChutney;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Tzatziki changed
+        /// </summary>
+        /// <param name="tzatziki">With or without Tzatziki</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Tzatziki")]
+        [InlineData(false, "Tzatziki")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenTzatzikiChanges(bool tzatziki, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (tzatziki == true)
+            {
+                gyro.Tzatziki = false;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Tzatziki = tzatziki;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Peppers changed
+        /// </summary>
+        /// <param name="peppers">With or without Peppers</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "Peppers")]
+        [InlineData(false, "Peppers")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenPeppersChanges(bool peppers, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (peppers == false)
+            {
+                gyro.Peppers = true;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.Peppers = peppers;
+            });
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when WingSauce changed
+        /// </summary>
+        /// <param name="wingSauce">With or without WingSauce</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(true, "WingSauce")]
+        [InlineData(false, "WingSauce")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        public void ShouldNotifyOfPropertyChangedWhenWingSauceChanges(bool wingSauce, string propertyName)
+        {
+            var gyro = new VirgoClassicGyro();
+
+            if (wingSauce == false)
+            {
+                gyro.WingSauce = true;
+            }
+
+            Assert.PropertyChanged(gyro, propertyName, () =>
+            {
+                gyro.WingSauce = wingSauce;
+            });
+        }
+
+        /// <summary>
+        /// Checks that the override ToString method returns the expected string
+        /// </summary>
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
+        {
+            Gyro gyro = new VirgoClassicGyro();
+            Assert.Equal("Virgo Classic Gyro", gyro.ToString());
+        }
     }
 }

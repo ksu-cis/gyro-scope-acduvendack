@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Entree classes.
@@ -17,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Scorpio Spicy Gyro.
     /// </summary>
-    public class ScorpioSpicyGyro : Gyro
+    public class ScorpioSpicyGyro : Gyro, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor for a Scorpio Spicy Gyro.
@@ -115,6 +116,15 @@ namespace GyroScope.Data.Entrees
 
                 return specialInstructions;
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return "Scorpio Spicy Gyro";
         }
     }
 }

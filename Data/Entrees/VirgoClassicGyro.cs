@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 /// <summary>
 /// The NameSpace that contains the Entree classes.
@@ -17,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Virgo Classic Gyro.
     /// </summary>
-    public class VirgoClassicGyro : Gyro
+    public class VirgoClassicGyro : Gyro, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor for a Virgo Classic Gyro.
@@ -115,6 +116,15 @@ namespace GyroScope.Data.Entrees
 
                 return specialInstructions;
             }
+        }
+
+        /// <summary>
+        /// Returns a string representing the name of the Entree
+        /// </summary>
+        /// <returns>The name</returns>
+        public override string ToString()
+        {
+            return "Virgo Classic Gyro";
         }
     }
 }

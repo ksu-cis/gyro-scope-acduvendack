@@ -7,6 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <RadioButton Content="{TemplateBinding ContentPresenter.Content}"
+            IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition/>
@@ -23,12 +35,9 @@
             <TextBlock FontSize="25" HorizontalAlignment="Left">
                 Honey
             </TextBlock>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                With Honey
-            </RadioButton>
-            <RadioButton FontSize="25" HorizontalAlignment="Left">
-                Without Honey
-            </RadioButton>
+            <CheckBox IsChecked="{Binding Path=Honey}" FontSize="25" HorizontalAlignment="Left">
+                Add Honey
+            </CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

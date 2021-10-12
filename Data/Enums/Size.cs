@@ -4,6 +4,9 @@
 * Purpose: To provide common sizes for sides, drinks, and combos
 */
 
+/// <summary>
+/// The NameSpace that contains the Enums classes.
+/// </summary>
 namespace GyroScope.Data.Enums
 {
     /// <summary>

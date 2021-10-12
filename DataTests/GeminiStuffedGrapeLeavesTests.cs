@@ -77,5 +77,58 @@ namespace GyroScope.DataTests
             grapeLeaves.Size = size;
             Assert.Equal(calories, grapeLeaves.Calories);
         }
+
+        /// <summary>
+        /// Checks that GeminiStuffedGrapeLeaves implements INotifyPropertyChanged
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var side = new GeminiStuffedGrapeLeaves();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(side);
+        }
+
+        /// <summary>
+        /// Checks that associated properties where notified when Size changed
+        /// </summary>
+        /// <param name="size">The size</param>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData(Size.Small, "Size")]
+        [InlineData(Size.Medium, "Size")]
+        [InlineData(Size.Large, "Size")]
+        [InlineData(Size.Small, "Price")]
+        [InlineData(Size.Medium, "Price")]
+        [InlineData(Size.Large, "Price")]
+        [InlineData(Size.Small, "Calories")]
+        [InlineData(Size.Medium, "Calories")]
+        [InlineData(Size.Large, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
+        {
+            var side = new GeminiStuffedGrapeLeaves();
+
+            if (size == Size.Small) { side.Size = Size.Large; }
+
+            Assert.PropertyChanged(side, propertyName, () =>
+            {
+                side.Size = size;
+            });
+        }
+
+        /// <summary>
+        /// Checks that the override ToString method returns the expected string
+        /// </summary>
+        /// <param name="size">The size</param>
+        /// <param name="name">The expected name</param>
+        [Theory]
+        [InlineData(Size.Small, "Small Gemini Stuffed Grape Leaves")]
+        [InlineData(Size.Medium, "Medium Gemini Stuffed Grape Leaves")]
+        [InlineData(Size.Large, "Large Gemini Stuffed Grape Leaves")]
+        public void ToStringShouldReturnExpectedValue(Size size, string name)
+        {
+            var side = new GeminiStuffedGrapeLeaves();
+            side.Size = size;
+            Assert.Equal(name, side.ToString());
+        }
     }
 }
