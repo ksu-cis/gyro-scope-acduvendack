@@ -20,7 +20,10 @@ namespace GyroScope.Data.Treats
     /// </summary>
     public class AquariusIce : Treat, INotifyPropertyChanged
     {
-        public Size _size = Size.Small;
+        /// <summary>
+        /// Backing field for the Size property
+        /// </summary>
+        private Size _size = Size.Small;
 
         /// <summary>
         /// The size of this Aquarius Ice
@@ -40,7 +43,10 @@ namespace GyroScope.Data.Treats
             }
         }
 
-        public AquariusIceFlavor _flavor = AquariusIceFlavor.Lemon;
+        /// <summary>
+        /// Backing field for the Flavor property
+        /// </summary>
+        private AquariusIceFlavor _flavor = AquariusIceFlavor.Lemon;
 
         /// <summary>
         /// The flavor of this Aquarius Ice

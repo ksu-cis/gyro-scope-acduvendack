@@ -69,6 +69,8 @@ namespace GyroScope.DataTests
         [Theory]
         [InlineData(true, "Honey")]
         [InlineData(false, "Honey")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
         public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool honey, string propertyName)
         {
             var drink = new CapricornMountainTea();

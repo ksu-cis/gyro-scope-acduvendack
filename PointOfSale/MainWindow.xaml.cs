@@ -46,7 +46,7 @@ namespace PointOfSale
             if (e.OriginalSource is Button button13 && button13.Name == "ReturnToMainButton")
             {
                 var menuSelectControl = new MenuItemSelectionControl();
-                menuItemSelect.Content = menuSelectControl;
+                MenuItemSelect.Content = menuSelectControl;
             }
         }
     }
