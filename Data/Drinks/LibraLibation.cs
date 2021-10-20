@@ -18,7 +18,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// The class for the Libra Libation.
     /// </summary>
-    public class LibraLibation : Drink, INotifyPropertyChanged
+    public class LibraLibation : Drink, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Private backing field for Flavor property
@@ -69,6 +69,7 @@ namespace GyroScope.Data.Drinks
                     this._sparkling = value;
                     OnPropertyChanged(nameof(this.Sparkling));
                     OnPropertyChanged(nameof(this.Name));
+                    OnPropertyChanged(nameof(this.SpecialInstructions));
                 }
                 
             }
@@ -112,54 +113,6 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
-        /// Property that gets the name of this kind of Libra Libation.
-        /// </summary>
-        public string Name
-        {
-            get
-            {
-                if (Sparkling)
-                {
-                    if (Flavor == LibraLibationFlavor.Orangeade)
-                    {
-                        return $"Sparkling Orangeade Libra Libation";
-                    }
-                    else if (Flavor == LibraLibationFlavor.SourCherry)
-                    {
-                        return $"Sparkling Sour Cherry Libra Libation";
-                    }
-                    else if (Flavor == LibraLibationFlavor.Biral)
-                    {
-                        return $"Sparkling Biral Libra Libation";
-                    }
-                    else
-                    {
-                        return $"Sparkling Pink Lemonada Libra Libation";
-                    }
-                }
-                else
-                {
-                    if (Flavor == LibraLibationFlavor.Orangeade)
-                    {
-                        return $"Still Orangeade Libra Libation";
-                    }
-                    else if (Flavor == LibraLibationFlavor.SourCherry)
-                    {
-                        return $"Still Sour Cherry Libra Libation";
-                    }
-                    else if (Flavor == LibraLibationFlavor.Biral)
-                    {
-                        return $"Still Biral Libra Libation";
-                    }
-                    else
-                    {
-                        return $"Still Pink Lemonada Libra Libation";
-                    }
-                }
-            }
-        }
-
-        /// <summary>
         /// Returns a string representing the name of the Drink
         /// </summary>
         /// <returns>The name</returns>
@@ -176,6 +129,24 @@ namespace GyroScope.Data.Drinks
             else
             {
                 return $"{Flavor} Libra Libation";
+            }
+        }
+
+        /// <summary>
+        /// Returns a queue of instructions that modify the Drink.
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions
+        {
+            get
+            {
+                Queue<string> specialInstructions = new Queue<string>();
+
+                if (Sparkling == false)
+                {
+                    specialInstructions.Enqueue("Hold Sparkling");
+                }
+
+                return specialInstructions;
             }
         }
     }

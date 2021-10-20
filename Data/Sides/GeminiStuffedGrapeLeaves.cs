@@ -18,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Gemini Stuffed Grape Leaves.
     /// </summary>
-    public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged
+    public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>

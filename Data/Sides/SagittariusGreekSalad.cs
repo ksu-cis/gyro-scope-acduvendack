@@ -18,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Sagittarius Greek Salad.
     /// </summary>
-    public class SagittariusGreekSalad : Side, INotifyPropertyChanged
+    public class SagittariusGreekSalad : Side, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>

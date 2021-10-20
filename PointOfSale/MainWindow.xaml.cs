@@ -17,6 +17,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GyroScope.Data.Entrees;
+using GyroScope.Data;
+using GyroScope.Data.Drinks;
+using GyroScope.Data.Sides;
+using GyroScope.Data.Treats;
 
 /// <summary>
 /// The namespace for classes in the PointOfSale GUI
@@ -34,6 +38,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new Order();
         }
 
         /// <summary>
@@ -47,6 +52,10 @@ namespace PointOfSale
             {
                 var menuSelectControl = new MenuItemSelectionControl();
                 MenuItemSelect.Content = menuSelectControl;
+            }
+            else if (e.OriginalSource is Button button14 && button14.Name == "CancelOrderButton")
+            {
+                this.DataContext = new Order();
             }
         }
     }

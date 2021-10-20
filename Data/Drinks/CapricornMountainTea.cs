@@ -17,7 +17,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// The class for the Capricorn Mountain Tea.
     /// </summary>
-    public class CapricornMountainTea : Drink, INotifyPropertyChanged
+    public class CapricornMountainTea : Drink, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Property that gets the price for this Capricorn Mountain Tea.
@@ -70,6 +70,7 @@ namespace GyroScope.Data.Drinks
                     this._honey = value;
                     OnPropertyChanged(nameof(this.Honey));
                     OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.SpecialInstructions));
                 }
             }
         }
@@ -81,6 +82,24 @@ namespace GyroScope.Data.Drinks
         public override string ToString()
         {
             return "Capricorn Mountain Tea";
+        }
+
+        /// <summary>
+        /// Returns a queue of instructions to modify the Drink
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions
+        {
+            get
+            {
+                Queue<string> specialInstructions = new Queue<string>();
+
+                if (Honey == true)
+                {
+                    specialInstructions.Enqueue("Add Honey");
+                }
+
+                return specialInstructions;
+            }
         }
     }
 }

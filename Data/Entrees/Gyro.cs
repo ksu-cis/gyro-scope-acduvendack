@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Abstract class that creates a Gyro.
     /// </summary>
-    public abstract class Gyro : Entree, INotifyPropertyChanged
+    public abstract class Gyro : Entree, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Field that stores the meat for this gyro.
@@ -372,10 +372,5 @@ namespace GyroScope.Data.Entrees
                 return _calories;
             }
         }
-
-        /// <summary>
-        /// Abstract property that gets a list of special instructions for this gyro.
-        /// </summary>
-        public override abstract IEnumerable<string> SpecialInstructions { get; }
     }
 }

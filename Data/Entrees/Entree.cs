@@ -17,7 +17,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Abstract class that creates an Entree.
     /// </summary>
-    public abstract class Entree : INotifyPropertyChanged
+    public abstract class Entree : INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes
@@ -46,6 +46,17 @@ namespace GyroScope.Data.Entrees
         protected virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Returns the name of the entree.
+        /// </summary>
+        public virtual string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
         }
     }
 }

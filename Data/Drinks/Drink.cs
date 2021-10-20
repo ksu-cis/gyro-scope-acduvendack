@@ -17,7 +17,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// The class for a drink.
     /// </summary>
-    public abstract class Drink : INotifyPropertyChanged
+    public abstract class Drink : INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes
@@ -41,6 +41,22 @@ namespace GyroScope.Data.Drinks
         protected virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Abstract property that gets a list of special instructions for this gyro.
+        /// </summary>
+        public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Returns the name of the Drink.
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
         }
     }
 }

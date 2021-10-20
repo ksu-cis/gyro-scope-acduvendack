@@ -18,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for sides.
     /// </summary>
-    public abstract class Side : INotifyPropertyChanged
+    public abstract class Side : INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes
@@ -35,10 +35,7 @@ namespace GyroScope.Data.Sides
         /// </summary>
         public Size Size
         {
-            get
-            {
-                return this._size;
-            }
+            get => _size;
 
             set
             {
@@ -48,6 +45,7 @@ namespace GyroScope.Data.Sides
                     OnPropertyChanged(nameof(this.Size));
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.Price));
+                    OnPropertyChanged(nameof(this.Name));
                 }
             }
         }
@@ -70,6 +68,29 @@ namespace GyroScope.Data.Sides
         protected virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Abstract property that gets a list of special instructions for this entree.
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions
+        {
+            get
+            {
+                Queue<string> specialInstructions = new Queue<string>();
+                return specialInstructions;
+            }
+        }
+
+        /// <summary>
+        /// Returns the name of the side
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
         }
     }
 }

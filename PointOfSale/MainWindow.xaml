@@ -33,7 +33,7 @@
         <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="35" VerticalAlignment="Center" Margin="40">
             GyroScope Point of Sale
         </TextBlock>
-        <Button Grid.Column="0" Grid.Row="2">
+        <Button x:Name="CancelOrderButton"  Grid.Column="0" Grid.Row="2">
             Cancel Order
         </Button>
         <Button x:Name="ReturnToMainButton" Grid.Column="1" Grid.Row="2">

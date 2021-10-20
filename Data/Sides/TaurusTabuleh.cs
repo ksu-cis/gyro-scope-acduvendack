@@ -18,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Taurus Tabuleh.
     /// </summary>
-    public class TaurusTabuleh : Side, INotifyPropertyChanged
+    public class TaurusTabuleh : Side, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>
@@ -30,14 +30,24 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
+
+                    OnPropertyChanged("Subtotal");
+                    OnPropertyChanged("Tax");
+                    OnPropertyChanged("Total");
                     return 1.50m;
                 }
                 else if (Size == Size.Medium)
                 {
+                    OnPropertyChanged("Subtotal");
+                    OnPropertyChanged("Tax");
+                    OnPropertyChanged("Total");
                     return 2.00m;
                 }
                 else
                 {
+                    OnPropertyChanged("Subtotal");
+                    OnPropertyChanged("Tax");
+                    OnPropertyChanged("Total");
                     return 2.50m;
                 }
             }

@@ -17,7 +17,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Pisces Fish Dish.
     /// </summary>
-    public class PiscesFishDish : Entree, INotifyPropertyChanged
+    public class PiscesFishDish : Entree, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Property containing getter for the price of this dish.

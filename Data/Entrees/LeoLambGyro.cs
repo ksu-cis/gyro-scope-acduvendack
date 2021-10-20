@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Leo Lamb Gyro.
     /// </summary>
-    public class LeoLambGyro : Gyro, INotifyPropertyChanged
+    public class LeoLambGyro : Gyro, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Constructor for a Leo Lamn Gyro.

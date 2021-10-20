@@ -8,20 +8,29 @@
              d:DesignHeight="900" d:DesignWidth="768">
     <Grid>
         <StackPanel >
-            <TextBlock FontSize="25" HorizontalAlignment="Center">Order #</TextBlock>
-            <TextBlock FontSize="25" HorizontalAlignment="Center">10/4/2021</TextBlock>
-            <ListView Margin="20" Height="400">
-                
-            </ListView>
-            <TextBlock FontSize="25" HorizontalAlignment="Center">
-                Subtotal $
-            </TextBlock>
-            <TextBlock FontSize="25" HorizontalAlignment="Center">
-                Tax $
-            </TextBlock>
-            <TextBlock FontSize="25" HorizontalAlignment="Center">
-                Total $
-            </TextBlock>
+            <TextBlock Text="{Binding Path=Number, StringFormat={}Order #{0}}" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Path=PlacedAt, StringFormat={}{0}}" FontSize="25" HorizontalAlignment="Center"/>
+            <ListBox SelectionChanged="OnSelectionChanged" x:Name="MainList" Button.Click="RemoveItemListener" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}"  Margin="20" Height="400">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock FontSize="20">
+                                <TextBlock.Text>
+                                    <MultiBinding  StringFormat="{}{0}                  {1:C}">
+                                        <Binding Path="Name"/>
+                                        <Binding Path="Price"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                            <ListBox IsEnabled="false" FontSize="15" BorderThickness="0" ItemsSource="{Binding SpecialInstructions}"/>
+                            <Button x:Name="RemoveItemButton" FontSize="20" Height="25" Width="200" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >Remove Item</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock Text="{Binding Path=Subtotal, StringFormat={}Subtotal ${0}}" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Path=Tax, StringFormat={}Tax ${0}}" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Path=Total, StringFormat={}Total ${0}}" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </UserControl>

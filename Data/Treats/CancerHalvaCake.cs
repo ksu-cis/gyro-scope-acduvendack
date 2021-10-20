@@ -17,7 +17,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing Cancer Helvah Cake.
     /// </summary>
-    public class CancerHalvaCake : Treat, INotifyPropertyChanged
+    public class CancerHalvaCake : Treat, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// The price of this Cancer Helvah Cake

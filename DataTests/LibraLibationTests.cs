@@ -102,14 +102,14 @@ namespace GyroScope.DataTests
         /// <param name="sparkling">If the drink is sparkling.</param>
         /// <param name="name">The expected name.</param>
         [Theory]
-        [InlineData(LibraLibationFlavor.Biral, true, "Sparkling Biral Libra Libation")]
-        [InlineData(LibraLibationFlavor.Orangeade, true, "Sparkling Orangeade Libra Libation")]
-        [InlineData(LibraLibationFlavor.PinkLemonada, true, "Sparkling Pink Lemonada Libra Libation")]
-        [InlineData(LibraLibationFlavor.SourCherry, true, "Sparkling Sour Cherry Libra Libation")]
-        [InlineData(LibraLibationFlavor.Biral, false, "Still Biral Libra Libation")]
-        [InlineData(LibraLibationFlavor.Orangeade, false, "Still Orangeade Libra Libation")]
-        [InlineData(LibraLibationFlavor.PinkLemonada, false, "Still Pink Lemonada Libra Libation")]
-        [InlineData(LibraLibationFlavor.SourCherry, false, "Still Sour Cherry Libra Libation")]
+        [InlineData(LibraLibationFlavor.Biral, true, "Biral Libra Libation")]
+        [InlineData(LibraLibationFlavor.Orangeade, true, "Orangeade Libra Libation")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, true, "Pink Lemonada Libra Libation")]
+        [InlineData(LibraLibationFlavor.SourCherry, true, "Sour Cherry Libra Libation")]
+        [InlineData(LibraLibationFlavor.Biral, false, "Biral Libra Libation")]
+        [InlineData(LibraLibationFlavor.Orangeade, false, "Orangeade Libra Libation")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, false, "Pink Lemonada Libra Libation")]
+        [InlineData(LibraLibationFlavor.SourCherry, false, "Sour Cherry Libra Libation")]
         public void NameShouldBeCorrectForFlavorAndSparkling(LibraLibationFlavor flavor, bool sparkling, string name)
         {
             LibraLibation libraLibation = new LibraLibation();
@@ -168,6 +168,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Sparkling")]
         [InlineData(true, "Name")]
         [InlineData(false, "Name")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
         public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
         {
             var drink = new LibraLibation();

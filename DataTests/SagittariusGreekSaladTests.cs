@@ -103,6 +103,9 @@ namespace GyroScope.DataTests
         [InlineData(Size.Small, "Calories")]
         [InlineData(Size.Medium, "Calories")]
         [InlineData(Size.Large, "Calories")]
+        [InlineData(Size.Small, "Name")]
+        [InlineData(Size.Medium, "Name")]
+        [InlineData(Size.Large, "Name")]
         public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
         {
             var side = new SagittariusGreekSalad();

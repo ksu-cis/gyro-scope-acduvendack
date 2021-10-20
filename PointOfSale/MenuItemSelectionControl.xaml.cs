@@ -20,6 +20,7 @@ using GyroScope.Data.Entrees;
 using GyroScope.Data.Sides;
 using GyroScope.Data.Treats;
 using GyroScope.Data.Drinks;
+using GyroScope.Data;
 
 /// <summary>
 /// The namespace for classes in the PointOfSale GUI
@@ -52,6 +53,10 @@ namespace PointOfSale
                 var virgoClassicControl = new VirgoClassicGyroControl();
                 virgoClassicControl.DataContext = virgoClassicGyro;
                 this.Content = virgoClassicControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)virgoClassicControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button2 && button2.Name == "LeoLambGyroButton")
             {
@@ -59,6 +64,10 @@ namespace PointOfSale
                 var leoLambControl = new LeoLambGyroControl();
                 leoLambControl.DataContext = leoLambGyro;
                 this.Content = leoLambControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)leoLambControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button3 && button3.Name == "ScorpioSpicyGyroButton")
             {
@@ -66,6 +75,10 @@ namespace PointOfSale
                 var scorpioSpicyControl = new ScorpioSpicyGyroControl();
                 scorpioSpicyControl.DataContext = scorpioSpicyGyro;
                 this.Content = scorpioSpicyControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)scorpioSpicyControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button4 && button4.Name == "PiscesFishDishButton")
             {
@@ -73,6 +86,10 @@ namespace PointOfSale
                 var piscesFishControl = new PiscesFishDishControl();
                 piscesFishControl.DataContext = piscesFishDish;
                 this.Content = piscesFishControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)piscesFishControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button5 && button5.Name == "TaurusTabulehButton")
             {
@@ -80,6 +97,10 @@ namespace PointOfSale
                 var taurusTabulehControl = new TaurusTabulehControl();
                 taurusTabulehControl.DataContext = taurusTabuleh;
                 this.Content = taurusTabulehControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)taurusTabulehControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button6 && button6.Name == "GeminiGrapeLeavesButton")
             {
@@ -87,6 +108,10 @@ namespace PointOfSale
                 var geminiGrapeControl = new GeminiStuffedGrapeLeavesControl();
                 geminiGrapeControl.DataContext = geminiGrapeLeaves;
                 this.Content = geminiGrapeControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)geminiGrapeControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button7 && button7.Name == "SagittariusSaladButton")
             {
@@ -94,6 +119,10 @@ namespace PointOfSale
                 var sagittariusSaladControl = new SagittariusGreekSaladControl();
                 sagittariusSaladControl.DataContext = sagittariusSalad;
                 this.Content = sagittariusSaladControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)sagittariusSaladControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button8 && button8.Name == "AriesFriesButton")
             {
@@ -101,6 +130,10 @@ namespace PointOfSale
                 var ariesFriesControl = new AriesFriesControl();
                 ariesFriesControl.DataContext = ariesFries;
                 this.Content = ariesFriesControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)ariesFriesControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button9 && button9.Name == "LibraLibationButton")
             {
@@ -108,6 +141,10 @@ namespace PointOfSale
                 var libraLibationControl = new LibraLibationControl();
                 libraLibationControl.DataContext = libraLibation;
                 this.Content = libraLibationControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)libraLibationControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button10 && button10.Name == "CapricornTeaButton")
             {
@@ -115,6 +152,10 @@ namespace PointOfSale
                 var capricornTeaControl = new CapricornMountainTeaControl();
                 capricornTeaControl.DataContext = capricornTea;
                 this.Content = capricornTeaControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)capricornTeaControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button11 && button11.Name == "AquariusIceButton")
             {
@@ -122,6 +163,10 @@ namespace PointOfSale
                 var aquariusIceControl = new AquariusIceControl();
                 aquariusIceControl.DataContext = aquariusIce;
                 this.Content = aquariusIceControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)aquariusIceControl.DataContext);
+                }
             }
             else if (e.OriginalSource is Button button12 && button12.Name == "CancerCakeButton")
             {
@@ -129,6 +174,10 @@ namespace PointOfSale
                 var cancerHalvaCakeControl = new CancerHalvaCakeControl();
                 cancerHalvaCakeControl.DataContext = cancerHalvaCake;
                 this.Content = cancerHalvaCakeControl;
+                if (DataContext is Order order)
+                {
+                    order.Add((IMenuItem)cancerHalvaCakeControl.DataContext);
+                }
             }
         }
     }

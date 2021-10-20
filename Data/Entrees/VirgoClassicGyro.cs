@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Virgo Classic Gyro.
     /// </summary>
-    public class VirgoClassicGyro : Gyro, INotifyPropertyChanged
+    public class VirgoClassicGyro : Gyro, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Constructor for a Virgo Classic Gyro.

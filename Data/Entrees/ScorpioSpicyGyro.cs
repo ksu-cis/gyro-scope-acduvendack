@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// The class for the Scorpio Spicy Gyro.
     /// </summary>
-    public class ScorpioSpicyGyro : Gyro, INotifyPropertyChanged
+    public class ScorpioSpicyGyro : Gyro, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Constructor for a Scorpio Spicy Gyro.

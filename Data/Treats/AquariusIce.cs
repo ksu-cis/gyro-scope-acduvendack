@@ -18,7 +18,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing "Aquarius Ice" - an itialian iced soda
     /// </summary>
-    public class AquariusIce : Treat, INotifyPropertyChanged
+    public class AquariusIce : Treat, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Backing field for the Size property
@@ -107,17 +107,6 @@ namespace GyroScope.Data.Treats
                     default:
                         throw new NotImplementedException($"Unknown Size {Size}");
                 }
-            }
-        }
-
-        /// <summary>
-        /// The Name used to describe the AquariusIce.
-        /// </summary>
-        public string Name
-        {
-            get
-            {
-                return $"{Size} {Flavor} Aquarius Ice";
             }
         }
 

@@ -17,7 +17,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A base class for all treats sold at GyroScope
     /// </summary>
-    public abstract class Treat : INotifyPropertyChanged
+    public abstract class Treat : INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes
@@ -41,6 +41,29 @@ namespace GyroScope.Data.Treats
         protected virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Abstract property that gets a list of special instructions for this entree.
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions
+        {
+            get
+            {
+                Queue<string> specialInstructions = new Queue<string>();
+                return specialInstructions;
+            }
+        }
+
+        /// <summary>
+        /// Returns the name of the treat
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
         }
     }
 }
