@@ -18,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// The class for the Aries Fries.
     /// </summary>
-    public class AriesFries : Side, INotifyPropertyChanged
+    public class AriesFries : Side, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Property containing getter for the price of this side.

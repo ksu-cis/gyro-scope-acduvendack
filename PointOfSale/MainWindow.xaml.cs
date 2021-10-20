@@ -42,7 +42,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Event listener for the Select Items button
+        /// Event listener for the Select Items button.
         /// </summary>
         /// <param name="sender">The source of the event</param>
         /// <param name="e">The event</param>

@@ -49,6 +49,8 @@ namespace GyroScope.Data
             set
             {
                 this._salesTaxRate = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                OnPropertyChanged(new PropertyChangedEventArgs("Total"));
             }
         }
 
@@ -110,12 +112,12 @@ namespace GyroScope.Data
         /// <summary>
         /// Backing field for the Number property
         /// </summary>
-        private static uint _nextOrderNumber = 1;
+        private static int _nextOrderNumber = 1;
 
         /// <summary>
         /// Property to distinguish the order number
         /// </summary>
-        public uint Number { get; private set; }
+        public int Number { get; private set; }
 
         /// <summary>
         /// Property for the time the order was placed
@@ -149,8 +151,8 @@ namespace GyroScope.Data
         /// <summary>
         /// Event listener for property change events of items within the collection
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event</param>
+        /// <param name="e">The event</param>
         protected virtual void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "Price")

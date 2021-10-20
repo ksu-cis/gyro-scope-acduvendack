@@ -100,7 +100,7 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Test that properties are notified when an object is added to the order
         /// </summary>
-        /// <param name="propertyName"></param>
+        /// <param name="propertyName">The property</param>
         [Theory]
         [InlineData("Subtotal")]
         [InlineData("Tax")]
@@ -121,7 +121,7 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Test that properties are notified when an object is removed from the order
         /// </summary>
-        /// <param name="propertyName"></param>
+        /// <param name="propertyName">The property</param>
         [Theory]
         [InlineData("Subtotal")]
         [InlineData("Tax")]
@@ -142,7 +142,7 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Test that properties are notified when an object within the order is modified
         /// </summary>
-        /// <param name="propertyName"></param>
+        /// <param name="propertyName">The property</param>
         [Theory]
         [InlineData("Subtotal")]
         [InlineData("Tax")]

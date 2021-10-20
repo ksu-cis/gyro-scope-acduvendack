@@ -41,6 +41,11 @@ namespace PointOfSale
             
         }
 
+        /// <summary>
+        /// Event listener for Remove Item button
+        /// </summary>
+        /// <param name="sender">The source of the event</param>
+        /// <param name="e">The event</param>
         private void RemoveItemListener(Object sender, RoutedEventArgs e)
         {
             if (e.OriginalSource is Button button14 && button14.Name == "RemoveItemButton")
@@ -52,7 +57,11 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// Event listener for OnSelectionChanged event for ListBox
+        /// </summary>
+        /// <param name="sender">The source of the event</param>
+        /// <param name="e">The event</param>
         private void OnSelectionChanged(Object sender, RoutedEventArgs e)
         {
             if (e.OriginalSource is ListBox box && box.Name == "MainList")
