@@ -48,9 +48,14 @@ namespace GyroScope.Data
 
             set
             {
-                this._salesTaxRate = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
-                OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                if (_salesTaxRate != value)
+                {
+                    this._salesTaxRate = value;
+                    OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("SalesTaxRate"));
+                }
+                    
             }
         }
 
