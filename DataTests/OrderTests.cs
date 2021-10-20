@@ -11,6 +11,8 @@ using Xunit;
 using GyroScope.Data;
 using System.Collections.Specialized;
 using GyroScope.Data.Sides;
+using GyroScope.Data.Entrees;
+using GyroScope.Data.Drinks;
 
 /// <summary>
 /// The NameSpace that contains the Tests classes.
@@ -98,6 +100,19 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Test that removing an item from the list actually removes an item
+        /// </summary>
+        [Fact]
+        public void ShouldRemoveItemFromOrderOnRemove()
+        {
+            var side = new SagittariusGreekSalad();
+            var order = new Order();
+            order.Add(side);
+            order.Remove(side);
+            Assert.Empty(order);
+        }
+
+        /// <summary>
         /// Test that properties are notified when an object is added to the order
         /// </summary>
         /// <param name="propertyName">The property</param>
@@ -106,6 +121,7 @@ namespace GyroScope.DataTests
         [InlineData("Tax")]
         [InlineData("Total")]
         [InlineData("Calories")]
+        [InlineData("Count")]
         public void ShouldNotifyOfPropertyChangedOnAdd(string propertyName)
         {
             var side = new SagittariusGreekSalad();
@@ -127,6 +143,7 @@ namespace GyroScope.DataTests
         [InlineData("Tax")]
         [InlineData("Total")]
         [InlineData("Calories")]
+        [InlineData("Count")]
         public void ShouldNotifyOfPropertyChangedWhenOnRemove(string propertyName)
         {
             var side = new SagittariusGreekSalad();
@@ -159,6 +176,40 @@ namespace GyroScope.DataTests
             {
                 side.Size = Data.Enums.Size.Large;
             });
+        }
+
+        /// <summary>
+        /// Test that properties are notified when SalesTaxRate is changed
+        /// </summary>
+        /// <param name="propertyName">The property</param>
+        [Theory]
+        [InlineData("Tax")]
+        [InlineData("Total")]
+        [InlineData("SalesTaxRate")]
+        public void ShouldNotifyOfPropertyChangedWhenSalesTaxChanged(string propertyName)
+        {
+            var side = new SagittariusGreekSalad();
+            var order = new Order();
+            order.Add(side);
+
+            Assert.PropertyChanged(order, propertyName, () =>
+            {
+                order.SalesTaxRate = 3;
+            });
+        }
+
+        /// <summary>
+        /// Checks that the Number property returns the correct value
+        /// </summary>
+        [Fact]
+        public void ChecksThatOrderNumberIsCorrect()
+        {
+            var order = new Order();
+            var order2 = new Order();
+            var order3 = new Order();
+            Assert.Equal(1, order.Number);
+            Assert.Equal(2, order2.Number);
+            Assert.Equal(3, order3.Number);
         }
     }
 }
