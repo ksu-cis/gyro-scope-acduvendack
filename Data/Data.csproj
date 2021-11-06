@@ -6,4 +6,10 @@
     <RootNamespace>GyroScope.Data</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="RoundRegister">
+      <HintPath>..\..\Downloads\RoundRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

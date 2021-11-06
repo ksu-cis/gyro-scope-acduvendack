@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="PointOfSale.CashPaymentProcessing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1152">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <local:CurrencyControl x:Name="HundredsControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$100" local:CustomerQuantity="{Binding Path=CustomerHundreds}" local:ChangeQuantity="{Binding Path=ChangeHundreds}" Grid.Row="1" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="FiftiesControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$50" local:CustomerQuantity="{Binding Path=CustomerFifties}" local:ChangeQuantity="{Binding Path=ChangeFifties}" Grid.Row="2" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="TwentiesControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$20" local:CustomerQuantity="{Binding Path=CustomerTwenties}" Grid.Row="3" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="TensControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$10" local:CustomerQuantity="{Binding Path=CustomerTens}" Grid.Row="4" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="FivesControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$5" local:CustomerQuantity="{Binding Path=CustomerFives}" Grid.Row="5" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="TwosControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$2" local:CustomerQuantity="{Binding Path=CustomerTwos}" Grid.Row="6" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="OnesControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="$1" local:CustomerQuantity="{Binding Path=CustomerOnes}" Grid.Row="7" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="DollarCoinsControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="¢100" local:CustomerQuantity="{Binding Path=CustomerDollarCoins}" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="HalfDollarsControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="¢50" local:CustomerQuantity="{Binding Path=CustomerHalfDollars}" Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="QuartersControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="¢25" local:CustomerQuantity="{Binding Path=CustomerQuarters}" Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="DimesControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="¢10" local:CustomerQuantity="{Binding Path=CustomerDimes}" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="NickelsControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="¢5" local:CustomerQuantity="{Binding Path=CustomerNickels}" Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="5"/>
+        <local:CurrencyControl x:Name="PenniesControl" BorderThickness="2" BorderBrush="Black" FontSize="20" local:LabelText="¢1" local:CustomerQuantity="{Binding Path=CustomerPennies}" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="5"/>
+        <TextBlock Padding="5" TextAlignment="Center" TextWrapping="Wrap" FontSize="15" Grid.Column="2">
+            From Customer
+        </TextBlock>
+        <TextBlock Padding="5" TextAlignment="Center" TextWrapping="Wrap" FontSize="15" Grid.Column="4">
+            Give As Change
+        </TextBlock>
+        <TextBlock Padding="5" TextAlignment="Center" TextWrapping="Wrap" FontSize="15" Grid.Column="8">
+            From Customer
+        </TextBlock>
+        <TextBlock Padding="5" TextAlignment="Center" TextWrapping="Wrap" FontSize="15" Grid.Column="10">
+            Give As Change
+        </TextBlock>
+        <TextBlock Padding="5" TextAlignment="Center" TextWrapping="Wrap" FontSize="15" Grid.Row="8" Grid.Column="6">
+            Amount Due:
+        </TextBlock>
+        <TextBlock Padding="5" TextAlignment="Center" TextWrapping="Wrap" FontSize="15" Grid.Row="8" Grid.Column="8">
+            Change Owed:
+        </TextBlock>
+        <Label HorizontalContentAlignment="Center" FontSize="15" Grid.Row="8" Grid.Column="7" BorderBrush="Black" BorderThickness="2"/>
+        <Label HorizontalContentAlignment="Center" FontSize="15" Grid.Row="8" Grid.Column="9" BorderBrush="Black" BorderThickness="2"/>
+        <Button Grid.Row="8" Grid.Column="10">
+            Finalize Sale
+        </Button>
+    </Grid>
+</UserControl>

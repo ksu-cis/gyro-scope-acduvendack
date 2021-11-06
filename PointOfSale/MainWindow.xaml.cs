@@ -56,6 +56,13 @@ namespace PointOfSale
             else if (e.OriginalSource is Button button14 && button14.Name == "CancelOrderButton")
             {
                 this.DataContext = new Order();
+                var menuSelectControl = new MenuItemSelectionControl();
+                MenuItemSelect.Content = menuSelectControl;
+            }
+            else if (e.OriginalSource is Button completeOrder && completeOrder.Name == "CompleteOrderButton")
+            {
+                var paymentScreen = new PaymentOptionsScreen();
+                MenuItemSelect.Content = paymentScreen;
             }
         }
     }
