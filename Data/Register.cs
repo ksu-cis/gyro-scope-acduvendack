@@ -48,8 +48,11 @@ namespace GyroScope.Data
             get => _customerHundreds;
             set
             {
-                _customerHundreds = value;
-                OnPropertyChanged("CustomerHundreds");
+                if (_customerHundreds != value)
+                {
+                    _customerHundreds = value;
+                    OnPropertyChanged("CustomerHundreds");
+                }
             }
         }
 
@@ -66,8 +69,12 @@ namespace GyroScope.Data
             get => _customerFifties;
             set
             {
-                _customerFifties = value;
-                OnPropertyChanged("CustomerFifties");
+                if (_customerFifties != value)
+                {
+                    _customerFifties = value;
+                    OnPropertyChanged("CustomerFifties");
+                }
+                
             }
         }
 
@@ -84,8 +91,12 @@ namespace GyroScope.Data
             get => _customerTwenties;
             set
             {
-                _customerTwenties = value;
-                OnPropertyChanged("CustomerTwenties");
+                if (_customerTwenties != value)
+                {
+                    _customerTwenties = value;
+                    OnPropertyChanged("CustomerTwenties");
+                }
+                
             }
         }
 
@@ -102,8 +113,12 @@ namespace GyroScope.Data
             get => _customerTens;
             set
             {
-                _customerTens = value;
-                OnPropertyChanged("CustomerTens");
+                if (_customerTens!= value)
+                {
+                    _customerTens = value;
+                    OnPropertyChanged("CustomerTens");
+                }
+                
             }
         }
 
@@ -120,8 +135,12 @@ namespace GyroScope.Data
             get => _customerFives;
             set
             {
-                _customerFives = value;
-                OnPropertyChanged("CustomerFives");
+                if (_customerFives != value)
+                {
+                    _customerFives = value;
+                    OnPropertyChanged("CustomerFives");
+                }
+                
             }
         }
 
@@ -138,8 +157,12 @@ namespace GyroScope.Data
             get => _customerTwos;
             set
             {
-                _customerTwos = value;
-                OnPropertyChanged("CustomerTwos");
+                if (_customerTwos != value)
+                {
+                    _customerTwos = value;
+                    OnPropertyChanged("CustomerTwos");
+                }
+                
             }
         }
 
@@ -156,8 +179,12 @@ namespace GyroScope.Data
             get => _customerOnes;
             set
             {
-                _customerOnes = value;
-                OnPropertyChanged("CustomerOnes");
+                if (_customerOnes != value)
+                {
+                    _customerOnes = value;
+                    OnPropertyChanged("CustomerOnes");
+                }
+                
             }
         }
 
@@ -174,8 +201,12 @@ namespace GyroScope.Data
             get => _customerDollarCoins;
             set
             {
-                _customerDollarCoins = value;
-                OnPropertyChanged("CustomerDollarCoins");
+                if (_customerDollarCoins != value)
+                {
+                    _customerDollarCoins = value;
+                    OnPropertyChanged("CustomerDollarCoins");
+                }
+                
             }
         }
 
@@ -192,8 +223,12 @@ namespace GyroScope.Data
             get => _customerHalfDollars;
             set
             {
-                _customerHalfDollars = value;
-                OnPropertyChanged("CustomerHalfDollars");
+                if (_customerHalfDollars != value)
+                {
+                    _customerHalfDollars = value;
+                    OnPropertyChanged("CustomerHalfDollars");
+                }
+                
             }
         }
 
@@ -210,8 +245,12 @@ namespace GyroScope.Data
             get => _customerQuarters;
             set
             {
-                _customerQuarters = value;
-                OnPropertyChanged("CustomerQuarters");
+                if (_customerQuarters != value)
+                {
+                    _customerQuarters = value;
+                    OnPropertyChanged("CustomerQuarters");
+                }
+                
             }
         }
 
@@ -228,8 +267,12 @@ namespace GyroScope.Data
             get => _customerDimes;
             set
             {
-                _customerDimes = value;
-                OnPropertyChanged("CustomerDimes");
+                if (_customerDimes != value)
+                {
+                    _customerDimes = value;
+                    OnPropertyChanged("CustomerDimes");
+                }
+                
             }
         }
 
@@ -246,8 +289,12 @@ namespace GyroScope.Data
             get => _customerNickels;
             set
             {
-                _customerNickels = value;
-                OnPropertyChanged("CustomerNickels");
+                if (_customerNickels != value)
+                {
+                    _customerNickels = value;
+                    OnPropertyChanged("CustomerNickels");
+                }
+                
             }
         }
 
@@ -264,8 +311,12 @@ namespace GyroScope.Data
             get => _customerPennies;
             set
             {
-                _customerPennies = value;
-                OnPropertyChanged("CustomerPennies");
+                if (_customerPennies != value)
+                {
+                    _customerPennies = value;
+                    OnPropertyChanged("CustomerPennies");
+                }
+                
             }
         }
 
@@ -387,8 +438,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeHundreds = value;
-                OnPropertyChanged("ChangeHundreds");
+                if (_changeHundreds != value)
+                {
+                    _changeHundreds = value;
+                    OnPropertyChanged("ChangeHundreds");
+                }
+                
             }
         }
 
@@ -406,8 +461,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeFifties = value;
-                OnPropertyChanged("ChangeFifties");
+                if (_changeFifties != value)
+                {
+                    _changeFifties = value;
+                    OnPropertyChanged("ChangeFifties");
+                }
+                
             }
         }
 
@@ -425,8 +484,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeTwenties = value;
-                OnPropertyChanged("ChangeTwenties");
+                if (_changeTwenties != value)
+                {
+                    _changeTwenties = value;
+                    OnPropertyChanged("ChangeTwenties");
+                }
+                
             }
         }
 
@@ -444,8 +507,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeTens = value;
-                OnPropertyChanged("ChangeTens");
+                if (_changeTens != value)
+                {
+                    _changeTens = value;
+                    OnPropertyChanged("ChangeTens");
+                }
+                
             }
         }
 
@@ -463,8 +530,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeFives = value;
-                OnPropertyChanged("ChangeFives");
+                if (_changeFives != value)
+                {
+                    _changeFives = value;
+                    OnPropertyChanged("ChangeFives");
+                }
+                
             }
         }
 
@@ -482,8 +553,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeTwos = value;
-                OnPropertyChanged("ChangeTwos");
+                if (_changeTwos != value)
+                {
+                    _changeTwos = value;
+                    OnPropertyChanged("ChangeTwos");
+                }
+                
             }
         }
 
@@ -501,8 +576,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeOnes = value;
-                OnPropertyChanged("ChangeOnes");
+                if (_changeOnes != value)
+                {
+                    _changeOnes = value;
+                    OnPropertyChanged("ChangeOnes");
+                }
+                
             }
         }
 
@@ -520,8 +599,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeDollarCoins = value;
-                OnPropertyChanged("ChangeDollarCoins");
+                if (_changeDollarCoins != value)
+                {
+                    _changeDollarCoins = value;
+                    OnPropertyChanged("ChangeDollarCoins");
+                }
+                
             }
         }
 
@@ -539,8 +622,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeHalfDollars = value;
-                OnPropertyChanged("ChangeHalfDollars");
+                if (_changeHalfDollars != value)
+                {
+                    _changeHalfDollars = value;
+                    OnPropertyChanged("ChangeHalfDollars");
+                }
+                
             }
         }
 
@@ -558,8 +645,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeQuarters = value;
-                OnPropertyChanged("ChangeQuarters");
+                if (_changeQuarters != value)
+                {
+                    _changeQuarters = value;
+                    OnPropertyChanged("ChangeQuarters");
+                }
+                
             }
         }
 
@@ -577,8 +668,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeDimes = value;
-                OnPropertyChanged("ChangeDimes");
+                if (_changeDimes != value)
+                {
+                    _changeDimes = value;
+                    OnPropertyChanged("ChangeDimes");
+                }
+                
             }
         }
 
@@ -596,8 +691,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changeNickels = value;
-                OnPropertyChanged("ChangeNickels");
+                if (_changeNickels != value)
+                {
+                    _changeNickels = value;
+                    OnPropertyChanged("ChangeNickels");
+                }
+                
             }
         }
 
@@ -615,8 +714,12 @@ namespace GyroScope.Data
 
             set
             {
-                _changePennies = value;
-                OnPropertyChanged("ChangePennies");
+                if (_changePennies != value)
+                {
+                    _changePennies = value;
+                    OnPropertyChanged("ChangePennies");
+                }
+                
             }
         }
 
@@ -683,6 +786,19 @@ namespace GyroScope.Data
             CashDrawer.Dimes = (int)(DrawerDimes + (CustomerDimes - ChangeDimes));
             CashDrawer.Nickels = (int)(DrawerNickels + (CustomerNickels - ChangeNickels));
             CashDrawer.Pennies = (int)(DrawerPennies + (CustomerPennies - ChangePennies));
+            OnPropertyChanged("DrawerHundreds");
+            OnPropertyChanged("DrawerFifties");
+            OnPropertyChanged("DrawerTwenties");
+            OnPropertyChanged("DrawerTens");
+            OnPropertyChanged("DrawerFives");
+            OnPropertyChanged("DrawerTwos");
+            OnPropertyChanged("DrawerOnes");
+            OnPropertyChanged("DrawerDollarCoins");
+            OnPropertyChanged("DrawerHalfDollars");
+            OnPropertyChanged("DrawerQuarters");
+            OnPropertyChanged("DrawerDimes");
+            OnPropertyChanged("DrawerNickels");
+            OnPropertyChanged("DrawerPennies");
         }
 
         /// <summary>

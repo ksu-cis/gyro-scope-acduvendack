@@ -111,7 +111,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerHundredsChanges(decimal hundreds)
         {
@@ -135,7 +135,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerFiftiesChanges(decimal fifties)
         {
@@ -159,7 +159,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerTwentiesChanges(decimal twenties)
         {
@@ -183,7 +183,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerTensChanges(decimal tens)
         {
@@ -207,7 +207,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerFivesChanges(decimal fives)
         {
@@ -231,7 +231,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerTwosChanges(decimal twos)
         {
@@ -255,7 +255,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerOnesChanges(decimal ones)
         {
@@ -279,7 +279,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerDollarCoinsChanges(decimal dollarCoins)
         {
@@ -303,7 +303,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerHalfDollarsChanges(decimal halfDollars)
         {
@@ -327,7 +327,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerQuartersChanges(decimal quarters)
         {
@@ -351,7 +351,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerDimesChanges(decimal dimes)
         {
@@ -375,7 +375,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerNickelsChanges(decimal nickels)
         {
@@ -399,7 +399,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenCustomerPenniesChanges(decimal pennies)
         {
@@ -423,7 +423,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeHundredsChanges(decimal hundreds)
         {
@@ -447,7 +447,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeFiftiesChanges(decimal fifties)
         {
@@ -471,7 +471,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeTwentiesChanges(decimal twenties)
         {
@@ -495,7 +495,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeTensChanges(decimal tens)
         {
@@ -519,7 +519,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeFivesChanges(decimal fives)
         {
@@ -543,7 +543,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeTwosChanges(decimal twos)
         {
@@ -567,7 +567,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeOnesChanges(decimal ones)
         {
@@ -591,7 +591,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeDollarCoinsChanges(decimal dollarCoins)
         {
@@ -615,7 +615,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeHalfDollarsChanges(decimal halfDollars)
         {
@@ -639,7 +639,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeQuartersChanges(decimal quarters)
         {
@@ -663,7 +663,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeDimesChanges(decimal dimes)
         {
@@ -687,7 +687,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeNickelsChanges(decimal nickels)
         {
@@ -711,7 +711,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangePenniesChanges(decimal pennies)
         {
@@ -735,7 +735,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3.56)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenAmountDueChanges(decimal due)
         {
@@ -759,7 +759,7 @@ namespace PointOfSaleTests
         [InlineData(1000)]
         [InlineData(1000000000)]
         [InlineData(-3.56)]
-        [InlineData(0)]
+        [InlineData(2)]
         [InlineData(1.5)]
         public void ShouldNotifyOfPropertyChangedWhenChangeOwedChanges(decimal total)
         {
