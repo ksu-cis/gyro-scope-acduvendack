@@ -8,7 +8,7 @@ using GyroScope.Data;
 using RoundRegister;
 
 /// <summary>
-/// NameSpace for the xUnit tests involved with the PointOfSale project
+/// Namespace for the xUnit tests involved with the PointOfSale project
 /// </summary>
 namespace PointOfSaleTests
 {
