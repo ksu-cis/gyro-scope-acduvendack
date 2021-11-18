@@ -1,0 +1,68 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@using GyroScope.Data;
+
+<div class="text-center">
+    <h1>Gyro Scope</h1>
+    <p>When the planets align!</p>
+    <br />
+    <h2 id="entrees">Entrees</h2>
+    <div class="menu-item">
+        <ul>
+            @foreach (IMenuItem item in Menu.Entrees)
+            {
+                <li>
+                    <br />
+                    <h3>@item.Name</h3>
+                    <h3>Price: $@item.Price</h3>
+                    <h3>Calories: @item.Calories</h3>
+                </li>
+            }
+        </ul>
+    </div>
+    <h2 id="sides">Sides</h2>
+    <div class="menu-item">
+        <ul>
+            @foreach (IMenuItem item in Menu.Sides)
+            {
+                <li>
+                    <br />
+                    <h3>@item.Name</h3>
+                    <h3>Price: $@item.Price</h3>
+                    <h3>Calories: @item.Calories</h3>
+                </li>
+            }
+        </ul>
+    </div>
+    <h2 id="drinks">Drinks</h2>
+    <div class="menu-item">
+        <ul>
+            @foreach (IMenuItem item in Menu.Drinks)
+            {
+                <li>
+                    <br />
+                    <h3>@item.Name</h3>
+                    <h3>Price: $@item.Price</h3>
+                    <h3>Calories: @item.Calories</h3>
+                </li>
+            }
+        </ul>
+    </div>
+    <h2 id="treats">Treats</h2>
+    <div class="menu-item">
+        <ul>
+            @foreach (IMenuItem item in Menu.Treats)
+            {
+                <li>
+                    <br />
+                    <h3>@item.Name</h3>
+                    <h3>Price: $@item.Price</h3>
+                    <h3>Calories: @item.Calories</h3>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

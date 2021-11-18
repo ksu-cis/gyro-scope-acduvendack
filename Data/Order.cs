@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Collections.Specialized;
+using RoundRegister;
 
 /// <summary>
 /// Namespace for IMenuItem, Order, Entrees, Drinks, Sides, etc.
@@ -66,12 +67,12 @@ namespace GyroScope.Data
         {
             get
             {
-                decimal subtotal = 0;
+                decimal subtotal = 0.00m;
                 foreach(IMenuItem item in this)
                 {
                     subtotal += item.Price;
                 }
-                return subtotal;
+                return decimal.Round(subtotal, 2, MidpointRounding.AwayFromZero);
             }
         }
 
@@ -169,6 +170,37 @@ namespace GyroScope.Data
             else if (e.PropertyName == "Calories") {
                 OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
             }
+        }
+
+        /// <summary>
+        /// Prints the receipt for the order
+        /// </summary>
+        /// <param name="cashOrCredit">The type of payment</param>
+        /// <param name="changeOwed">The change owed for cash payment</param>
+        public void PrintReceipt(string cashOrCredit, string changeOwed)
+        {
+            RecieptPrinter.PrintLine("Order #" + Number.ToString());
+            RecieptPrinter.PrintLine(PlacedAt.ToString());
+            RecieptPrinter.PrintLine("");
+            foreach (IMenuItem item in this)
+            {
+                RecieptPrinter.PrintLine(item.ToString());
+                RecieptPrinter.PrintLine("  Price: $" + item.Price.ToString());
+                
+                foreach(string specialRequest in item.SpecialInstructions)
+                {
+                    RecieptPrinter.PrintLine("      " + specialRequest);
+                }
+
+                RecieptPrinter.PrintLine("");
+            }
+            
+            RecieptPrinter.PrintLine("Subtotal: $" + Subtotal.ToString());
+            RecieptPrinter.PrintLine("Tax: $" + Tax.ToString());
+            RecieptPrinter.PrintLine("Total: $" + Total.ToString());
+            RecieptPrinter.PrintLine("Payment Type: " + cashOrCredit);
+            RecieptPrinter.PrintLine("Change Given: $" + changeOwed);
+            RecieptPrinter.CutTape();
         }
     }
 }

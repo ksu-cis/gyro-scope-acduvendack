@@ -25,6 +25,25 @@ namespace GyroScope.DataTests
     public class OrderTests
     {
         /// <summary>
+        /// Checks that the Number property returns the correct value
+        /// </summary>
+        [Fact]
+        public void ChecksThatOrderNumberIsCorrect()
+        {
+            
+            var order = new Order();
+            var order2 = new Order();
+            var order3 = new Order();
+            Assert.Equal(order.Number, order2.Number - 1);
+            Assert.Equal(order.Number, order3.Number - 2);
+            Assert.Equal(order2.Number, order.Number + 1);
+            Assert.Equal(order2.Number, order3.Number - 1);
+            Assert.Equal(order3.Number, order2.Number + 1);
+            Assert.Equal(order3.Number, order.Number + 2);
+
+        }
+
+        /// <summary>
         /// Test that adding an object to the collection causes a notification
         /// </summary>
         [Fact]
@@ -68,7 +87,7 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Checks that LeoLambGyro implements INotifyPropertyChanged
+        /// Checks that Order implements INotifyPropertyChanged
         /// </summary>
         [Fact]
         public void ShouldImplementINotifyPropertyChanged()
@@ -78,7 +97,7 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Checks that LeoLambGyro implements INotifyCollectionChanged
+        /// Checks that Order implements INotifyCollectionChanged
         /// </summary>
         [Fact]
         public void ShouldImplementINotifyCollectionChanged()
@@ -196,20 +215,6 @@ namespace GyroScope.DataTests
             {
                 order.SalesTaxRate = 3;
             });
-        }
-
-        /// <summary>
-        /// Checks that the Number property returns the correct value
-        /// </summary>
-        [Fact]
-        public void ChecksThatOrderNumberIsCorrect()
-        {
-            var order = new Order();
-            var order2 = new Order();
-            var order3 = new Order();
-            Assert.Equal(1, order.Number);
-            Assert.Equal(2, order2.Number);
-            Assert.Equal(3, order3.Number);
         }
     }
 }

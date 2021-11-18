@@ -1,6 +1,5 @@
 ﻿/*
  * App.xaml.cs
- * Modified by: Adam Duvendack
  */
 using System;
 using System.Collections.Generic;
