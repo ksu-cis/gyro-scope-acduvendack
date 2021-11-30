@@ -101,5 +101,27 @@ namespace GyroScope.Data.Drinks
                 return specialInstructions;
             }
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Tea brewed from the ironwort plant, a traditional herbal health enhancer.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Drinks";
+            }
+        }
     }
 }

@@ -60,5 +60,15 @@ namespace GyroScope.DataTests
             Entree fishDish = new PiscesFishDish();
             Assert.Equal("Pisces Fish Dish", fishDish.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var entree = new PiscesFishDish();
+            Assert.Equal("Halibut baked with onions and tomatoes in a red wine sauce", entree.Description);
+        }
     }
 }

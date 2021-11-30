@@ -133,5 +133,15 @@ namespace GyroScope.DataTests
             side.Size = size;
             Assert.Equal(name, side.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var side = new GeminiStuffedGrapeLeaves();
+            Assert.Equal("Grape leaves stuffed with spiced meat and rice.", side.Description);
+        }
     }
 }

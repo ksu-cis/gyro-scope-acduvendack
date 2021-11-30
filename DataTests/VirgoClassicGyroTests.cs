@@ -423,13 +423,13 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Checks that the override ToString method returns the expected string
+        /// Checks that the Description property returns the expected value.
         /// </summary>
         [Fact]
-        public void ToStringShouldReturnExpectedValue()
+        public void DescriptionShouldReturnExpectedValue()
         {
-            Gyro gyro = new VirgoClassicGyro();
-            Assert.Equal("Virgo Classic Gyro", gyro.ToString());
+            var entree = new VirgoClassicGyro();
+            Assert.Equal("The classic American gyro - seasoned doner pork, fresh sliced tomato, diced onion, shredded lettuce, and tzatziki sauce, wrapped in a warm flaky pita.", entree.Description);
         }
     }
 }

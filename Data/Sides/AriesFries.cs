@@ -72,5 +72,27 @@ namespace GyroScope.Data.Sides
         {
             return $"{Size} Aries Fries";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Crispy fried potatoes topped with feta cheese, onions, and herbs.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Sides";
+            }
+        }
     }
 }

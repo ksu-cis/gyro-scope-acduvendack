@@ -50,5 +50,15 @@ namespace GyroScope.DataTests
             Treat cake = new CancerHalvaCake();
             Assert.Equal("Cancer Halva Cake", cake.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var treat = new CancerHalvaCake();
+            Assert.Equal("A gluten-free cake made from sesame seeds", treat.Description);
+        }
     }
 }

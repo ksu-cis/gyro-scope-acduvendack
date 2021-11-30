@@ -4,65 +4,181 @@
     ViewData["Title"] = "Home page";
 }
 @using GyroScope.Data;
+@using GyroScope.Data.Entrees;
+@using GyroScope.Data.Sides;
+@using GyroScope.Data.Drinks;
+@using GyroScope.Data.Treats;
+
 
 <div class="text-center">
     <h1>Gyro Scope</h1>
     <p>When the planets align!</p>
     <br />
-    <h2 id="entrees">Entrees</h2>
-    <div class="menu-item">
-        <ul>
-            @foreach (IMenuItem item in Menu.Entrees)
+    <form id="food-database">
+        <div id="search">
+            <h3>Search for dish or ingredients:</h3>
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search" />
+        </div>
+
+        <div id="filters">
+            <h3>Check out our filters: </h3>
+            <h4>Menu Item Category</h4>
+            @foreach (String category in @Model.PossibleCategories)
             {
-                <li>
-                    <br />
-                    <h3>@item.Name</h3>
-                    <h3>Price: $@item.Price</h3>
-                    <h3>Calories: @item.Calories</h3>
-                </li>
+                <label>
+                    <input type="checkbox" name="MenuItemCategories" value="@category" checked="@Model.MenuItemCategories.Contains(category)" />
+                    @category
+                </label>
             }
-        </ul>
-    </div>
-    <h2 id="sides">Sides</h2>
-    <div class="menu-item">
-        <ul>
-            @foreach (IMenuItem item in Menu.Sides)
-            {
-                <li>
-                    <br />
-                    <h3>@item.Name</h3>
-                    <h3>Price: $@item.Price</h3>
-                    <h3>Calories: @item.Calories</h3>
-                </li>
-            }
-        </ul>
-    </div>
-    <h2 id="drinks">Drinks</h2>
-    <div class="menu-item">
-        <ul>
-            @foreach (IMenuItem item in Menu.Drinks)
-            {
-                <li>
-                    <br />
-                    <h3>@item.Name</h3>
-                    <h3>Price: $@item.Price</h3>
-                    <h3>Calories: @item.Calories</h3>
-                </li>
-            }
-        </ul>
-    </div>
-    <h2 id="treats">Treats</h2>
-    <div class="menu-item">
-        <ul>
-            @foreach (IMenuItem item in Menu.Treats)
-            {
-                <li>
-                    <br />
-                    <h3>@item.Name</h3>
-                    <h3>Price: $@item.Price</h3>
-                    <h3>Calories: @item.Calories</h3>
-                </li>
-            }
-        </ul>
-    </div>
+            <h4>Calorie Range</h4>
+            <div>
+                Between
+                <input name="CaloriesMin" type="number" min="0" max="1200" step="1" placeholder="min" value="@Model.CaloriesMin"/>
+                and
+                <input name="CaloriesMax" type="number" min="0" max="1200" step="1" placeholder="max" value="@Model.CaloriesMax"/>
+            </div>
+            <h4>Price Range</h4>
+            <div>
+                Between
+                <input name="PriceMin" type="number" min="0.00" max="10.00" step=".01" placeholder="min" value="@Model.PriceMin"/>
+                and
+                <input name="PriceMax" type="number" min="0.00" max="10.00" step=".01" placeholder="max" value="@Model.PriceMax"/>
+            </div>
+        </div>
+
+        <div id="results">
+            <h2 id="entrees">Entrees</h2>
+            <ul class="menu-item">
+                @{
+                    int count = 0;
+
+                @foreach (IMenuItem item in Model.Items)
+                {
+                    @if (item is Entree)
+                    {
+                        count++;
+                        <li>
+                            <br />
+                            <h3>@item.Name</h3>
+                            <h4>
+                                @item.Description
+                            </h4>
+                            <h3>Price: $@item.Price</h3>
+                            <h3>Calories: @item.Calories</h3>
+                        </li>
+                    }
+                }
+                            }
+
+                @{
+                    if (count == 0)
+                    {
+                                <li>
+                                    <h3>No entrees matched search/filter parameters</h3>
+                                </li>
+
+                    }
+                }
+            </ul>
+            <h2 id="sides">Sides</h2>
+            <ul class="menu-item">
+                @{
+                    int count2 = 0;
+
+                    @foreach (IMenuItem item in Model.Items)
+                    {
+                        @if (item is Side)
+                        {
+                            count2++;
+                            <li>
+                                <br />
+                                <h3>@item.Name</h3>
+                                <h4>
+                                    @item.Description
+                                </h4>
+                                <h3>Price: $@item.Price</h3>
+                                <h3>Calories: @item.Calories</h3>
+                            </li>
+                        }
+                    }
+                }
+
+                @{
+                    if (count2 == 0)
+                    {
+                        <li>
+                            <h3>No sides matched search/filter parameters</h3>
+                        </li>
+
+                    }
+                }
+            </ul>
+            <h2 id="drinks">Drinks</h2>
+            <ul class="menu-item">
+                @{
+                    int count3 = 0;
+
+                    @foreach (IMenuItem item in Model.Items)
+                    {
+                        @if (item is Drink)
+                        {
+                            count3++;
+                            <li>
+                                <br />
+                                <h3>@item.Name</h3>
+                                <h4>
+                                    @item.Description
+                                </h4>
+                                <h3>Price: $@item.Price</h3>
+                                <h3>Calories: @item.Calories</h3>
+                            </li>
+                        }
+                    }
+                    }
+
+                    @{
+                        if (count3 == 0)
+                        {
+                            <li>
+                                <h3>No drinks matched search/filter parameters</h3>
+                            </li>
+
+                        }
+                    }
+                </ul>
+            <h2 id="treats">Treats</h2>
+            <ul class="menu-item">
+                @{
+                    int count4 = 0;
+
+                    @foreach (IMenuItem item in Model.Items)
+                    {
+                        @if (item is Treat)
+                        {
+                            count4++;
+                            <li>
+                                <br />
+                                <h3>@item.Name</h3>
+                                <h4>
+                                    @item.Description
+                                </h4>
+                                <h3>Price: $@item.Price</h3>
+                                <h3>Calories: @item.Calories</h3>
+                            </li>
+                        }
+                    }
+                }
+                @{
+                    if (count4 == 0)
+                    {
+                        <li>
+                            <h3>No treats matched search/filter parameters</h3>
+                        </li>
+
+                    }
+                }
+            </ul>
+        </div>
+    </form>
 </div>

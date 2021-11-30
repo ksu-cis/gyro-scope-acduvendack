@@ -61,5 +61,27 @@ namespace GyroScope.Data.Entrees
         {
             return "Pisces Fish Dish";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Halibut baked with onions and tomatoes in a red wine sauce";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Entrees";
+            }
+        }
     }
 }

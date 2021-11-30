@@ -37,5 +37,15 @@ namespace GyroScope.Data
         /// Name property with getter
         /// </summary>
         public string Name { get; }
+
+        /// <summary>
+        /// Read-only description property
+        /// </summary>
+        public string Description { get; }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public string ItemType { get; }
     }
 }

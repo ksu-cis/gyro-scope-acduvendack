@@ -431,5 +431,15 @@ namespace GyroScope.DataTests
             Gyro gyro = new ScorpioSpicyGyro();
             Assert.Equal("Scorpio Spicy Gyro", gyro.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var entree = new ScorpioSpicyGyro();
+            Assert.Equal("A gyro with a spicy twist - seasoned doner chicken, steamed peppers, chopped onions, and shredded lettuce topped with hot wing sauce and wrapped in a warm pita.", entree.Description);
+        }
     }
 }
