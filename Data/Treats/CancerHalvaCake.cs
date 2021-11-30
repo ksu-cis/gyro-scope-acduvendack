@@ -49,5 +49,27 @@ namespace GyroScope.Data.Treats
         {
             return "Cancer Halva Cake";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "A gluten-free cake made from sesame seeds";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Treats";
+            }
+        }
     }
 }

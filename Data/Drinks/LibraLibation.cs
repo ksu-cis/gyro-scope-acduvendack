@@ -149,5 +149,27 @@ namespace GyroScope.Data.Drinks
                 return specialInstructions;
             }
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Real imported sparkling or still Greek sodas in a variety of flavors.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Drinks";
+            }
+        }
     }
 }

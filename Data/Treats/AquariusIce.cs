@@ -125,5 +125,27 @@ namespace GyroScope.Data.Treats
                 return $"{Size} Blue Raspberry Aquarius Ice";
             }
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Italian flavored ices, the coolest treat you can eat with a spoon!";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Treats";
+            }
+        }
     }
 }

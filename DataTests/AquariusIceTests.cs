@@ -230,5 +230,15 @@ namespace GyroScope.DataTests
             drink.Size = size;
             Assert.Equal(name, drink.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var treat = new AquariusIce();
+            Assert.Equal("Italian flavored ices, the coolest treat you can eat with a spoon!", treat.Description);
+        }
     }
 }

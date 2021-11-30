@@ -126,5 +126,27 @@ namespace GyroScope.Data.Entrees
         {
             return "Virgo Classic Gyro";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "The classic American gyro - seasoned doner pork, fresh sliced tomato, diced onion, shredded lettuce, and tzatziki sauce, wrapped in a warm flaky pita.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Entrees";
+            }
+        }
     }
 }

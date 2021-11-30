@@ -83,5 +83,27 @@ namespace GyroScope.Data.Sides
         {
             return $"{Size} Taurus Tabuleh";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "A bulgar salad rife with fresh herbs and lemon.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Sides";
+            }
+        }
     }
 }

@@ -126,5 +126,27 @@ namespace GyroScope.Data.Entrees
         {
             return "Scorpio Spicy Gyro";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "A gyro with a spicy twist - seasoned doner chicken, steamed peppers, chopped onions, and shredded lettuce topped with hot wing sauce and wrapped in a warm pita.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Entrees";
+            }
+        }
     }
 }

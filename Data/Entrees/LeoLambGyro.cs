@@ -126,5 +126,27 @@ namespace GyroScope.Data.Entrees
         {
             return "Leo Lamb Gyro";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato, diced onion, steamed eggplant, and shredded lettuce, smothered in mint chutney and served in a pita.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Entrees";
+            }
+        }
     }
 }

@@ -307,6 +307,8 @@ namespace GyroScope.Data.Entrees
         {
             get
             {
+                _calories = 0;
+
                 if (Pita == true)
                 {
                     _calories += 262;

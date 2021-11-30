@@ -432,5 +432,15 @@ namespace GyroScope.DataTests
             Gyro gyro = new LeoLambGyro();
             Assert.Equal("Leo Lamb Gyro", gyro.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var entree = new LeoLambGyro();
+            Assert.Equal("A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato, diced onion, steamed eggplant, and shredded lettuce, smothered in mint chutney and served in a pita.", entree.Description);
+        }
     }
 }

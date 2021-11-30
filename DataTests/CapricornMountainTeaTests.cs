@@ -94,5 +94,15 @@ namespace GyroScope.DataTests
             Drink tea = new CapricornMountainTea();
             Assert.Equal("Capricorn Mountain Tea", tea.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var drink = new CapricornMountainTea();
+            Assert.Equal("Tea brewed from the ironwort plant, a traditional herbal health enhancer.", drink.Description);
+        }
     }
 }

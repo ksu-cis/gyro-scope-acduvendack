@@ -198,5 +198,15 @@ namespace GyroScope.DataTests
             drink.Flavor = flavor;
             Assert.Equal(name, drink.ToString());
         }
+
+        /// <summary>
+        /// Checks that the Description property returns the expected value.
+        /// </summary>
+        [Fact]
+        public void DescriptionShouldReturnExpectedValue()
+        {
+            var drink = new LibraLibation();
+            Assert.Equal("Real imported sparkling or still Greek sodas in a variety of flavors.", drink.Description);
+        }
     }
 }

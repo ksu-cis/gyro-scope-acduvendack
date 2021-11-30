@@ -73,5 +73,27 @@ namespace GyroScope.Data.Sides
         {
             return $"{Size} Gemini Stuffed Grape Leaves";
         }
+
+        /// <summary>
+        /// Property that returns description of item.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Grape leaves stuffed with spiced meat and rice.";
+            }
+        }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public override string ItemType
+        {
+            get
+            {
+                return "Sides";
+            }
+        }
     }
 }

@@ -58,5 +58,15 @@ namespace GyroScope.Data.Drinks
                 return this.ToString();
             }
         }
+
+        /// <summary>
+        /// Abstract property that returns a description of the item.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
+        /// Read-only item type property
+        /// </summary>
+        public abstract string ItemType { get; }
     }
 }
